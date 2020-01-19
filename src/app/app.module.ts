@@ -9,18 +9,18 @@ import { ContactDetailsComponent } from './contacts/contact-details/contact-deta
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContactDetailsComponent,
-    ContactListComponent
-  ],
-  imports: [
-    BrowserModule,
-	AppRoutingModule,
-	FormsModule,
-	HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ContactDetailsComponent,
+		ContactListComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		HttpModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
