@@ -29,6 +29,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
 	});
 });
 
+
 // Serve only the static files form the dist directory
 // Replace the '/dist/<to_your_project_name>'
 
