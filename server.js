@@ -33,7 +33,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
 
 	// Initialize the app.
 	const port = process.env.PORT || 8080;
-	console.log(port);
+	console.log("running on port: " + port);
 });
 
 // CONTACTS API ROUTES BELOW
