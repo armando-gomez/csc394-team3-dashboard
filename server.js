@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 var mongodb = require("mongodb");
 var bodyParser = require("body-parser");
+var URI = "mongodb://<agomez67>:<armando67>@ds137882.mlab.com:37882/heroku_xjj2pvwd"
 
 var CONTACTS_COLLECTION = "contacts";
 
@@ -13,7 +14,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function (err, client) {
+mongodb.MongoClient.connect(URI || "mongodb://localhost:27017/test", function (err, client) {
 	if (err) {
 		console.log(err);
 		process.exit(1);
@@ -24,7 +25,7 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
 	console.log("Database connection ready");
 
 	// Initialize the app.
-	var server = app.listen(process.env.PORT || 8080, function () {
+	var server = app.listen(37882 || 8080, function () {
 		var port = server.address().port;
 		console.log("App now running on port", port);
 	});
