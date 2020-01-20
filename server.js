@@ -1,12 +1,23 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
+var path = require("path");
 var ObjectID = mongodb.ObjectID;
 
 var CONTACTS_COLLECTION = "contacts";
 
 var app = express();
 app.use(bodyParser.json());
+
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/csc394-team3-dashboard'));
+
+app.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname + '/dist/csc394-team3-dashboard/index.html'));
+});
+
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
 
 // Create a database variable outside of the database connection callback to reuse the connection pool in your app.
 var db;
