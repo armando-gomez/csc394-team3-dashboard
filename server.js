@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
 var ObjectID = mongodb.ObjectID;
+var path = require('path');
 
 var CONTACTS_COLLECTION = "contacts";
 
@@ -30,6 +31,14 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
 		var port = server.address().port;
 		console.log("App now running on port", port);
 	});
+});
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.listen(process.env.PORT || 4000, function () {
+    console.log('Node app is working!');
 });
 
 // CONTACTS API ROUTES BELOW
