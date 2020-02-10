@@ -23,7 +23,6 @@ export class AuthService {
 	}
 
 	public registerUser(user) {
-		console.log(user);
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
@@ -47,5 +46,10 @@ export class AuthService {
 				return data;
 			}
 		));
+	}
+
+	public storeUser(token, user) {
+		console.log(token);
+		console.log(user);
 	}
 }

@@ -44,7 +44,8 @@ export class LoginComponent implements OnInit {
 		this.authService.loginUser(this.loginForm.value)
 		.subscribe(
 			data => {
-				console.log(data);
+				var json = JSON.stringify(data);
+				this.authService.storeUser(json["token"], json["user"]);
 			},
 			err => {
 				this.isSubmitted = false;
