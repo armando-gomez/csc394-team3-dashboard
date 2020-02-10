@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { catchError } from 'rxjs/operators'
+import { catchError, map } from 'rxjs/operators'
 
 
 @Injectable({
@@ -26,12 +26,16 @@ export class AuthService {
 		localStorage.removeItem('ACCESS_TOKEN');
 	}
 
-	public registerUser(user): Observable<User> {
+	public registerUser(user) {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.http.post<User>('api/register', user, httpOptions);
+		return this.http.post('api/register', user, httpOptions).pipe(map(
+			data => {
+				return data;
+			}
+		));
 	}
 }
