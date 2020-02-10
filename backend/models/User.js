@@ -7,7 +7,8 @@ const Schema = mongoose.Schema;
 let UserSchema = new Schema({
    email: {
 	  type: String,
-	  required: true
+	  required: true,
+	  unique: true
    },
    password: {
 	  type: String,
@@ -30,6 +31,15 @@ let UserSchema = new Schema({
 });
 
 const User = module.exports = mongoose.model('User', UserSchema);
+
+module.exports.getUserById = function(id, callback) {
+	User.findById(id, callback);
+}
+
+module.exports.getUserByEmail = function(email, callback) {
+	const query = {email: email};
+	User.findOne(query, callback);
+}
 
 module.exports.addUser = function(newUser, callback) {
 	bcrypt.genSalt(10, (err, salt) => {

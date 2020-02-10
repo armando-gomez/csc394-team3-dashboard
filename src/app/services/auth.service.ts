@@ -14,10 +14,6 @@ export class AuthService {
 		private http: HttpClient
 	) { }
 
-	public login(userInfo: User) {
-		localStorage.setItem('ACCESS_TOKEN', "access_token");
-	}
-
 	public isLoggedIn() {
 		return localStorage.getItem('ACCESS_TOKEN') !== null;
 	}
@@ -33,6 +29,19 @@ export class AuthService {
 			})
 		};
 		return this.http.post('api/register', user, httpOptions).pipe(map(
+			data => {
+				return data;
+			}
+		));
+	}
+
+	public loginUser(user) {
+		const httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		};
+		return this.http.post('api/login', user, httpOptions).pipe(map(
 			data => {
 				return data;
 			}

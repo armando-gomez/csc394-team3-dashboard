@@ -24,4 +24,38 @@ router.post('/register', (req, res, next) => {
 	});
 });
 
+router.post('/login', (req, res, next) => {
+	const email = req.body.email;
+	const password = req.body.password;
+
+	User.getUserById(email, (err, user) => {
+		if(err) throw err;
+		if(!user) {
+			return res.json({success: false, msg: 'User not found'});
+		}
+
+		User.comparePassword(password, user.password, (err, isMatch) => {
+			if(err) throw err;
+			if(isMatch) {
+				const token = jwt.sign({data: user}, config.secret, {
+					expiresIn: 604800
+				});
+				res.json({
+					success: true,
+					token: 'JWT'+token,
+					user: {
+						id: user._id,
+						email: user.email,
+						firstname: user.firstname,
+						lastname: user.lastname,
+						usertype: user.usertype
+					}
+				})
+			} else {
+				return res.json({success: false, msg: 'Wrong password'}); 
+			}
+		})
+	})
+})
+
 module.exports = router;
