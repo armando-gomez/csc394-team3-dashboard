@@ -6,7 +6,7 @@ const userRoute = express.Router();
 let User = require('../models/User');
 
 // Add Employee
-userRoute.route('/register').post((req, res, next) => {
+userRoute.route('/register').get(function (req, res, next) {
 	res.send('hello world');
 	// User.create(req.body, (error, data) => {
 	// 	if (error) {
