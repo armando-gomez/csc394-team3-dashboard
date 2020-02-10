@@ -38,6 +38,10 @@ export class RegisterComponent implements OnInit {
 		if(this.registerForm.invalid) {
 			return;
 		}
+
+		this.authService.registerUser(this.registerForm.value).subscribe(data => {
+			console.log(data);
+		});
 	}
 
 }
