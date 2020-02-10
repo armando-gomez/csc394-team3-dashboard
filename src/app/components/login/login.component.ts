@@ -46,12 +46,13 @@ export class LoginComponent implements OnInit {
 			data => {
 				var json = JSON.parse(JSON.stringify(data));
 				this.authService.storeUser(json.token, json.user);
+				this.router.navigate(['dashboard']);
 			},
 			err => {
 				this.isSubmitted = false;
+				this.router.navigate(['login']);
 			}
-		);;
-		this.router.navigateByUrl('/dashboard');
+		);
 	}
 
 }
