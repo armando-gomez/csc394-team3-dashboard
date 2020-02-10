@@ -10,4 +10,4 @@ router.post('/register', (req, res, next) => {
 	res.send('hello world');
 })
 
-module.exports = userRoute;
+module.exports = router;
