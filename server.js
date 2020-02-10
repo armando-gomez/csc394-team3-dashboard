@@ -29,12 +29,12 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./config/passport')(passport);
+require('./backend/config/passport')(passport);
 
 app.use("/api", userRoute);
 
 app.get('/', (req, res) => {
-	res.send("invalid enpoint");
+	res.send("invalid endpoint");
 });
 
 app.get('*', function (req, res) {
