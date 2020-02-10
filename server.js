@@ -22,7 +22,7 @@ const app = express();
 
 app.use(cors());
 
-app.use(express.static(__dirname + 'public'));
+app.use(express.static(__dirname + '/dist/csc394-team3-dashboard'));
 
 app.use(bodyParser.json());
 
@@ -37,8 +37,8 @@ app.get('/', (req, res) => {
 	res.send("invalid endpoint");
 });
 
-app.get('*', function (req, res) {
-	res.sendFile(path.join(__dirname + 'public/index.html'));
+app.get('/*', function (req, res) {
+	res.sendFile(path.join(__dirname + '/dist/csc394-team3-dashboard/index.html'));
 });
 
 app.listen(process.env.PORT || 8080);
