@@ -7,14 +7,14 @@ let User = require('../models/User');
 
 // Add Employee
 userRoute.route('/register').post((req, res, next) => {
-	User.create(req.body, (error, data) => {
-		res.send('hello world');
-		// if (error) {
-		// 	return next(error)
-		// } else {
-		// 	res.json(data)
-		// }
-	})
+	res.send('hello world');
+	// User.create(req.body, (error, data) => {
+	// 	if (error) {
+	// 		return next(error)
+	// 	} else {
+	// 		res.json(data)
+	// 	}
+	// });
 });
 
 module.exports = userRoute;
