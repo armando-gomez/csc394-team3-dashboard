@@ -16,7 +16,7 @@ export class AuthService {
 	) { }
 
 	public isLoggedIn() {
-		// return this.jwtHelper.isTokenExpired(this.authToken);
+		return localStorage.getItem('id_token') !== null;
 	}
 
 	public logout() {
