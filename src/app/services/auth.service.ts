@@ -3,8 +3,6 @@ import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { JwtHelperService } from "@auth0/angular-jwt";
-
 
 @Injectable({
 	providedIn: 'root'
@@ -15,11 +13,10 @@ export class AuthService {
 
 	constructor(
 		private http: HttpClient,
-		private jwtHelper: JwtHelperService
 	) { }
 
 	public isLoggedIn() {
-		return this.jwtHelper.isTokenExpired(this.authToken);
+		// return this.jwtHelper.isTokenExpired(this.authToken);
 	}
 
 	public logout() {
