@@ -13,6 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
 
+export function tokenGetter() {
+	return localStorage.getItem('id_token');
+}
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -30,9 +34,7 @@ import { RegisterComponent } from './components/register/register.component';
 		HttpClientModule,
 		JwtModule.forRoot({
 			config: {
-				tokenGetter: function tokenGetter() {
-					return localStorage.getItem('id_token');
-				},
+				tokenGetter: tokenGetter,
 				whitelistedDomains: ['localhost:3000'],
 				blacklistedRoutes: ['http://localhost:3000/auth/login']
 			}

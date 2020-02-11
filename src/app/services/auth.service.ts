@@ -3,6 +3,8 @@ import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { readFile } from 'fs';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -16,7 +18,7 @@ export class AuthService {
 	) { }
 
 	public isLoggedIn() {
-		return localStorage.getItem('id_token') !== null;
+		return (localStorage.getItem('id_token') !== null);
 	}
 
 	public logout() {
