@@ -20,6 +20,11 @@ mongoose.connect(config.db, {
 const userRoute = require('./backend/routes/user.route');
 const app = express();
 
+corsOptions = {
+	origin: "https://csc394-dashboard-staging.herokuapp.com",
+	optionsSuccessStatus: 200
+};
+
 app.use(cors());
 
 app.use(express.static(__dirname + '/dist/csc394-team3-dashboard'));
