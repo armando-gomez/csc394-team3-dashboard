@@ -21,7 +21,7 @@ const userRoute = require('./backend/routes/user.route');
 const app = express();
 
 corsOptions = {
-	origin: "https://csc394-dashboard-staging.herokuapp.com",
+	origin: "https://team3-dashboard-chae.herokuapp.com",
 	optionsSuccessStatus: 200
 };
 
