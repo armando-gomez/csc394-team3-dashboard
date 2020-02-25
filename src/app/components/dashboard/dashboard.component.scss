@@ -1,0 +1,41 @@
+::ng-deep .ui-menubar-custom {
+	width: 80%;
+
+	input {
+		width: 60%;
+	}
+
+	.rightMenu {
+		float: right;
+		margin: .25em;
+	}
+}
+
+p-sidebar {
+	.container {
+		height: 100%;
+	}
+
+	img {
+		width: 70%;
+	}
+
+	ul {
+		padding-top: 2em;
+		height: 100%;
+
+		.list-group-item {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			font-size: 20px;
+		}
+	}
+}
+
+.content {
+	color: white;
+}
+
+.image-details {
+	text-align: center;
+}

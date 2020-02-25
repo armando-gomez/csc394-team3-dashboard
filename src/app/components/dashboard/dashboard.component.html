@@ -1,0 +1,49 @@
+<p-menubar [model]="items">
+	<input type="search" pInputText placeholder="Search">
+	<div class="rightMenu">
+		<i class="pi pi-circle-on"></i>
+		<a><i class="pi pi-caret-down"></i></a>
+	</div>
+</p-menubar>
+
+<p-sidebar [(visible)]="displaySideMenu">
+	<div class="container">
+		<img src="../../../assets/img/logo.png" alt="logo">
+		<ul class="list-group list-group-flush">
+			<button type="button" class="list-group-item list-group-item-action active"  routerLink="/dashboard">Home</button>
+			<button type="button" class="list-group-item list-group-item-action" routerLink="/charts">Charts</button>
+			<button type="button" class="list-group-item list-group-item-action" routerLink="/jobs">Jobs</button>
+			<button type="button" class="list-group-item list-group-item-action" routerLink="/messages">Messages</button>
+		</ul>
+	</div>
+</p-sidebar>
+
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="6000">
+				<ng-template let-image pTemplate="item">
+					<div class="image-details container">
+						<div class="row">
+							<div class="col">
+								<img src="../../../assets/img/{{ image.src }}.png">
+							</div>
+						</div>
+					</div>
+				</ng-template>
+			</p-carousel>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<p-header>
+				<h3>Placeholder</h3>
+			</p-header>
+		</div>
+		<div class="col-6">
+			<p-header>
+				<h3># of jobs by location</h3>
+			</p-header>
+		</div>
+	</div>
+</div>
