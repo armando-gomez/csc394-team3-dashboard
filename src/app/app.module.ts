@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { LandingComponent } from './components/landing/landing.component';
 
 export function tokenGetter() {
 	return localStorage.getItem('id_token');
@@ -31,7 +32,8 @@ export function tokenGetter() {
 		RegisterComponent,
 		ChartsComponent,
 		JobsComponent,
-		MessagesComponent
+		MessagesComponent,
+		LandingComponent
 	],
 	imports: [
 		BrowserModule,
