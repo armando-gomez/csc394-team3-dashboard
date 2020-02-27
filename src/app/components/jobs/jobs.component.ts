@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
+import { JobPost } from "../../interfaces/job-post";
 
 @Component({
 	selector: 'app-jobs',
@@ -7,7 +8,7 @@ import { JobService } from 'src/app/services/job.service';
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs: any[];
+	jobs: JobPost[];
 
 	constructor(
 		private jobService: JobService
@@ -17,15 +18,7 @@ export class JobsComponent implements OnInit {
 	}
 
 	loadJobPosts() {
-		this.jobService.getAllJobPosts()
-			.subscribe(
-				data => {
-					console.log(data);
-				},
-				err => {
-					console.log(err);
-				}
-			);
+		this.jobService.getAllJobPosts().subscribe((data: JobPost) => console.log(data));
 	}
 
 }

@@ -21,6 +21,6 @@ export class JobService {
 			})
 		};
 
-		return this.http.get('job/all', httpOptions);
+		return this.http.get<JobPost>('job/all', httpOptions);
 	}
 }
