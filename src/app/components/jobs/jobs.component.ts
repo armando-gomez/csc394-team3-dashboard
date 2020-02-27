@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { JobPost } from "../../interfaces/job-post";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { AuthService } from 'src/app/services/auth.service';
-
 
 @Component({
 	selector: 'app-jobs',
@@ -11,24 +8,25 @@ import { AuthService } from 'src/app/services/auth.service';
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs: JobPost[];
+	jobs: any[];
 
 	constructor(
-		private jobService: JobService,
-		private http: HttpClient,
-		private authService: AuthService
+		private jobService: JobService
 	) { }
 
 	ngOnInit() {
 	}
 
 	loadJobPosts() {
-		const httpOptions = {
-			headers: new HttpHeaders({
-				'Authorization': this.authService.getToken()
-			})
-		};
-		this.http.get<JobPost>('job/all', httpOptions).subscribe(data => console.log(data));
+		this.jobService.getAllJobPosts()
+			.subscribe(
+				data => {
+					console.log(data);
+				},
+				err => {
+					console.log(err);
+				}
+			);
 	}
 
 }

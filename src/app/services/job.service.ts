@@ -15,12 +15,12 @@ export class JobService {
 	) { }
 
 	public getAllJobPosts() {
-		const httpOptions = {
-			headers: new HttpHeaders({
-				'Authorization': this.authService.getToken()
-			})
-		};
+		// const httpOptions = {
+		// 	headers: new HttpHeaders({
+		// 		'Authorization': this.authService.getToken()
+		// 	})
+		// };
 
-		return this.http.get<JobPost>('job/all', httpOptions);
+		return this.http.get<JobPost>('job/all');
 	}
 }
