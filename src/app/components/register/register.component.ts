@@ -21,10 +21,7 @@ export class RegisterComponent implements OnInit {
 
 	ngOnInit() {
 		this.registerForm = this.formBuilder.group({
-			email: ['',
-				Validators.required,
-				Validators.email
-			],
+			email: ['', [Validators.required, Validators.email]],
 			password: ['', Validators.required],
 			firstname: ['', Validators.required],
 			lastname: ['', Validators.required],
@@ -44,7 +41,10 @@ export class RegisterComponent implements OnInit {
 
 		this.authService.registerUser(this.registerForm.value)
 			.subscribe(
-				data => this.router.navigate(['/login']),
+				data => {
+					console.log(data);
+					this.router.navigate(['/login'])
+				},
 				err => {
 					this.isSubmitted = false;
 				}
