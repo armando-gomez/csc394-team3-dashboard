@@ -36,7 +36,7 @@ app.use(passport.session());
 require('./backend/config/passport')(passport);
 
 app.use("/user", userRoute);
-app.use("/jobs", jobRoute);
+app.use("/jobposts", jobRoute);
 
 app.get('/', (req, res) => {
 	res.send("invalid endpoint");

@@ -21,6 +21,6 @@ export class JobService {
 		// 	})
 		// };
 
-		return this.http.get('jobs/all');
+		return this.http.get('jobposts/all');
 	}
 }
