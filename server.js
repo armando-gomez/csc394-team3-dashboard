@@ -18,10 +18,11 @@ mongoose.connect(config.db, {
 );
 
 const userRoute = require('./backend/routes/user.route');
+const jobRoute = require('./backend/routes/jobpost.route');
 const app = express();
 
 corsOptions = {
-	origin: "https://csc394-dashboard-staging.herokuapp.com",
+	origin: "https://dashboard-armando-gomez.herokuapp.com",
 	optionsSuccessStatus: 200
 };
 
@@ -36,7 +37,8 @@ app.use(passport.session());
 
 require('./backend/config/passport')(passport);
 
-app.use("/api", userRoute);
+app.use("/user", userRoute);
+app.use("/jobs", jobRoute);
 
 app.get('/', (req, res) => {
 	res.send("invalid endpoint");

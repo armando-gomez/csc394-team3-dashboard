@@ -32,7 +32,7 @@ export class AuthService {
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.http.post('api/register', user, httpOptions).pipe(map(
+		return this.http.post('user/register', user, httpOptions).pipe(map(
 			data => {
 				return data;
 			}
@@ -45,7 +45,7 @@ export class AuthService {
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.http.post('api/login', user, httpOptions).pipe(map(
+		return this.http.post('user/login', user, httpOptions).pipe(map(
 			data => {
 				return data;
 			}
