@@ -1,22 +1,5 @@
-<p-menubar [model]="items">
-	<input type="search" pInputText placeholder="Search">
-	<div class="rightMenu">
-		<i class="pi pi-circle-on"></i>
-		<a><i class="pi pi-caret-down"></i></a>
-	</div>
-</p-menubar>
-
-<p-sidebar [(visible)]="displaySideMenu">
-	<div class="container">
-		<img src="../../../assets/img/logo.png" alt="logo">
-		<ul class="list-group list-group-flush">
-			<button type="button" class="list-group-item list-group-item-action active"  routerLink="/dashboard">Home</button>
-			<button type="button" class="list-group-item list-group-item-action" routerLink="/charts">Charts</button>
-			<button type="button" class="list-group-item list-group-item-action" routerLink="/jobs">Jobs</button>
-			<button type="button" class="list-group-item list-group-item-action" routerLink="/messages">Messages</button>
-		</ul>
-	</div>
-</p-sidebar>
+<app-menubar (toggleSideMenu)="openSideMenu($event)"></app-menubar>
+<app-sidebar [showSideBar]="displaySideMenu"></app-sidebar>
 
 <div class="container">
 	<div class="row">
