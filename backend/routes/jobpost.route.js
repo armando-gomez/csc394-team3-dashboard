@@ -9,8 +9,7 @@ let JobPost = require('../models/JobPost');
 
 router.get('/all', (req, res) => {
 	JobPost.getAllJobPosts({}, (err, jobposts) => {
-		console.log(jobposts);
-		res.json({ success: true });
+		res.json(jobposts);
 	});
 });
 
