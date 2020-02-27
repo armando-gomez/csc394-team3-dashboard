@@ -46,7 +46,8 @@ module.exports.getJobPostByLink = function(link, callback) {
 }
 
 module.exports.getAllJobPosts = function(filter, callback) {
-	JobPost.find(filter, function(err, jobposts) {
-		return JSON.parse(JSON.stringify(jobposts));
-	});
+	JobPost.find().lean().exec(function(err, jobposts) {
+		return callback.json(jobposts);
+	})
+		
 }
