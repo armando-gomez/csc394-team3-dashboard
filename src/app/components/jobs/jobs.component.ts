@@ -20,7 +20,7 @@ export class JobsComponent implements OnInit {
 		this.jobService.getAllJobPosts()
 			.subscribe(
 				data => {
-					this.jobs = JSON.parse(JSON.stringify(data));
+					console.log(data);
 				},
 				err => {
 					console.log(err);
