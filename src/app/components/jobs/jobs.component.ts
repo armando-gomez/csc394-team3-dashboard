@@ -8,7 +8,7 @@ import { JobPost } from "../../interfaces/job-post";
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs: any[];
+	jobs;
 
 	constructor(
 		private jobService: JobService
@@ -21,7 +21,7 @@ export class JobsComponent implements OnInit {
 		this.jobService.getAllJobPosts()
 			.subscribe(
 				data => {
-					console.log(data);
+					this.jobs = data;
 				},
 				err => {
 					console.log(err);
