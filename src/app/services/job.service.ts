@@ -21,11 +21,6 @@ export class JobService {
 			})
 		};
 
-		return this.http.get('job/all', httpOptions).pipe(map(
-			data => {
-				console.log(data);
-				return data;
-			}
-		));
+		return this.http.get('job/all', httpOptions);
 	}
 }
