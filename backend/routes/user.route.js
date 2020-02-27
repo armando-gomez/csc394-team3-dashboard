@@ -32,7 +32,7 @@ router.post('/register', [
 		});
 });
 
-router.post('/login', (req, res, next) => {
+router.post('/login', (req, res) => {
 	const email = req.body.email;
 	const password = req.body.password;
 
