@@ -12,6 +12,6 @@ router.get('/all', (req, res) => {
 		console.log(jobposts);
 		res.json({ success: true });
 	});
-})
+});
 
 module.exports = router;

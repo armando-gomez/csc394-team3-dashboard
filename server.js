@@ -7,9 +7,7 @@ const passport = require('passport');
 const config = require("./backend/config/database");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.db, {
-	useMongoClient: true
-}).then(() => {
+mongoose.connect(config.db).then(() => {
 	console.log('Database sucessfully connected')
 },
 	error => {

@@ -8,7 +8,7 @@ let JobPostSchema = new Schema({
 		required: true
 	},
 	Company: {
-		type: String, 
+		type: String,
 		required: true
 	},
 	Location: {
@@ -27,7 +27,7 @@ let JobPostSchema = new Schema({
 		unique: true
 	},
 	Timestamp: {
-		type: String, 
+		type: String,
 		required: true
 	}
 }, {
@@ -36,18 +36,15 @@ let JobPostSchema = new Schema({
 
 const JobPost = module.exports = mongoose.model('JobPost', JobPostSchema);
 
-module.exports.getJobPostById = function(id, callback) {
+module.exports.getJobPostById = function (id, callback) {
 	JobPost.findById(id, callback);
 }
 
-module.exports.getJobPostByLink = function(link, callback) {
-	const query = {Link: link};
+module.exports.getJobPostByLink = function (link, callback) {
+	const query = { Link: link };
 	JobPost.findOne(query, callback);
 }
 
-module.exports.getAllJobPosts = function(filter, callback) {
-	JobPost.find().lean().exec(function(err, jobposts) {
-		return callback.json(jobposts);
-	})
-		
+module.exports.getAllJobPosts = function (filter, callback) {
+	JobPost.find(filter, callback);
 }
