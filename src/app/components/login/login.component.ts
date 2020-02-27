@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
 	loginForm: FormGroup;
 	isSubmitted = false;
 
-
 	constructor(
 		private authService: AuthService,
 		private router: Router,
@@ -26,10 +25,7 @@ export class LoginComponent implements OnInit {
 
 	ngOnInit() {
 		this.loginForm = this.formBuilder.group({
-			email: ['', [
-				Validators.required,
-				Validators.email]
-			],
+			email: ['', [Validators.required, Validators.email]],
 			password: ['', Validators.required]
 		});
 	}

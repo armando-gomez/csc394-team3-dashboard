@@ -26,6 +26,7 @@ export class AuthService {
 	}
 
 	public registerUser(user) {
+		console.log(user);
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
