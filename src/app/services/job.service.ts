@@ -21,8 +21,6 @@ export class JobService {
 		// 	})
 		// };
 
-		return this.http.get('job/all')
-			.toPromise()
-			.then(res => res);
+		return this.http.get('jobs/all');
 	}
 }
