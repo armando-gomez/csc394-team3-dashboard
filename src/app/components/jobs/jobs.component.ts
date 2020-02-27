@@ -18,15 +18,7 @@ export class JobsComponent implements OnInit {
 	}
 
 	loadJobPosts() {
-		this.jobService.getAllJobPosts()
-			.subscribe(
-				data => {
-					console.log(data);
-				},
-				err => {
-					console.log(err);
-				}
-			);
+		this.jobService.getAllJobPosts().then(res => console.log(res));
 	}
 
 }
