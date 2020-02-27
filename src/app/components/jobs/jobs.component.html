@@ -1,7 +1,5 @@
 <p>jobs works!</p>
 
-<button (click)="loadJobPosts()">Load Job Posts</button>
-
 <div *ngIf="jobs" >
 	<ng-container *ngFor="let job of jobs">
 		<p>{{ job.Title }}</p>

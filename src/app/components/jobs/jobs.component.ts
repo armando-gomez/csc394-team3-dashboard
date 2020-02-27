@@ -15,6 +15,7 @@ export class JobsComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
+		this.loadJobPosts();
 	}
 
 	loadJobPosts() {
