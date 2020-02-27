@@ -1,7 +1,31 @@
-<p>jobs works!</p>
+<app-menubar (toggleSideMenu)="openSideMenu($event)"></app-menubar>
+<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName"></app-sidebar>
 
-<div *ngIf="jobs" >
-	<ng-container *ngFor="let job of jobs">
-		<p>{{ job.Title }}</p>
-	</ng-container>
+<div class="container">
+	<div *ngIf="jobs" >
+		<ng-container *ngFor="let job of jobs">
+			<div class="row">
+				<div class="col-4">
+					<div class="row">
+						<div class="col">
+							<h2>{{ job.Company }}</h2>
+						</div>
+						<div class="col">
+							<h3>{{ job.Location }}</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="row">
+						<div class="col">
+							<h2>{{ job.Title }}</h2>
+						</div>
+						<div class="col" *ngIf="job.Pay">
+							<h3>{{ job.Pay }}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ng-container>
+	</div>
 </div>

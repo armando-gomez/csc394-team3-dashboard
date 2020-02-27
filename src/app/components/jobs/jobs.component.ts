@@ -8,7 +8,9 @@ import { JobPost } from "../../interfaces/job-post";
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs;
+	jobs: any;
+	displaySideMenu = false;
+	pageName = 'jobs';
 
 	constructor(
 		private jobService: JobService
@@ -28,6 +30,10 @@ export class JobsComponent implements OnInit {
 					console.log(err);
 				}
 			);
+	}
+
+	openSideMenu(event) {
+		this.displaySideMenu = event;
 	}
 
 }

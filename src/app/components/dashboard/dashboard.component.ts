@@ -8,9 +8,9 @@ import { MenuItem } from "primeng/api";
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-	items: MenuItem[];
 	images: any[];
 	displaySideMenu = false;
+	pageName = 'home';
 
 	constructor() {
 	}

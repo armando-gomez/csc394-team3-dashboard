@@ -13,7 +13,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login' },
 	{ path: 'login', component: LoginComponent },
-	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]}, 
+	{ path: 'dashboard', component: DashboardComponent,}, 
 	{ path: 'register', component: RegisterComponent},
 	{ path: 'charts', component: ChartsComponent},
 	{ path: 'jobs', component: JobsComponent},
