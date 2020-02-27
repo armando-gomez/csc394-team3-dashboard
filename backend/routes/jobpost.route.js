@@ -8,11 +8,10 @@ const config = require('../config/database');
 let JobPost = require('../models/JobPost');
 
 router.get('/all', (req, res) => {
-	res.json({ success: true });
-	// JobPost.getAllJobPosts({}, (err, jobposts) => {
-	// 	console.log(jobposts);
-		
-	// });
-});
+	JobPost.getAllJobPosts({}, (err, jobposts) => {
+		console.log(jobposts);
+		res.json({ success: true });
+	});
+})
 
 module.exports = router;
