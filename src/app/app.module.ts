@@ -18,6 +18,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { ChartsComponent } from './components/charts/charts.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { MessagesComponent } from './components/messages/messages.component';
+import { MenubarComponent } from './components/menubar/menubar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 export function tokenGetter() {
 	return localStorage.getItem('id_token');
@@ -31,7 +33,9 @@ export function tokenGetter() {
 		RegisterComponent,
 		ChartsComponent,
 		JobsComponent,
-		MessagesComponent
+		MessagesComponent,
+		MenubarComponent,
+		SidebarComponent
 	],
 	imports: [
 		BrowserModule,

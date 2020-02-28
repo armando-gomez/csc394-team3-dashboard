@@ -7,9 +7,7 @@ const passport = require('passport');
 const config = require("./backend/config/database");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.db, {
-	useMongoClient: true
-}).then(() => {
+mongoose.connect(config.db).then(() => {
 	console.log('Database sucessfully connected')
 },
 	error => {
@@ -18,10 +16,11 @@ mongoose.connect(config.db, {
 );
 
 const userRoute = require('./backend/routes/user.route');
+const jobRoute = require('./backend/routes/jobpost.route');
 const app = express();
 
 corsOptions = {
-	origin: "https://csc394-dashboard-staging.herokuapp.com",
+	origin: "https://dashboard-armando-gomez.herokuapp.com",
 	optionsSuccessStatus: 200
 };
 
@@ -36,7 +35,8 @@ app.use(passport.session());
 
 require('./backend/config/passport')(passport);
 
-app.use("/api", userRoute);
+app.use("/user", userRoute);
+app.use("/jobposts", jobRoute);
 
 app.get('/', (req, res) => {
 	res.send("invalid endpoint");
