@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { JobPost } from "../../interfaces/job-post";
 import * as sample from '../../sample.json';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-jobs',
@@ -9,8 +10,7 @@ import * as sample from '../../sample.json';
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	// jobs: any = (sample as any).default;
-	jobs: any;
+	jobs;
 	displaySideMenu = false;
 	pageName = 'jobs';
 
@@ -19,7 +19,11 @@ export class JobsComponent implements OnInit {
 	) { }
 
 	ngOnInit() {
-		this.loadJobPosts();
+		if(environment.production) {
+			this.loadJobPosts();
+		} else {
+			this.jobs = (sample as any).default
+		}
 	}
 
 	loadJobPosts() {
