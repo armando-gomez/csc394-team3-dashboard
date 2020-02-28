@@ -9,7 +9,8 @@ import * as sample from '../../sample.json';
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs: any = (sample as any).default;
+	// jobs: any = (sample as any).default;
+	jobs: any;
 	displaySideMenu = false;
 	pageName = 'jobs';
 
