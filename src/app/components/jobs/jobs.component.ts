@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { JobPost } from "../../interfaces/job-post";
+import * as sample from '../../sample.json';
 
 @Component({
 	selector: 'app-jobs',
@@ -8,7 +9,7 @@ import { JobPost } from "../../interfaces/job-post";
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs: any;
+	jobs: any = (sample as any).default;
 	displaySideMenu = false;
 	pageName = 'jobs';
 
@@ -34,6 +35,10 @@ export class JobsComponent implements OnInit {
 
 	openSideMenu(event) {
 		this.displaySideMenu = event;
+	}
+
+	openLink(url) {
+		window.open(url, "_blank");
 	}
 
 }

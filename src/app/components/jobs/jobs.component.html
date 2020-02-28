@@ -2,28 +2,31 @@
 <app-sidebar [showSideBar]="displaySideMenu" [page]="pageName"></app-sidebar>
 
 <div class="container">
-	<div *ngIf="jobs" >
+	<div class="content" *ngIf="jobs">
 		<ng-container *ngFor="let job of jobs">
-			<div class="row">
-				<div class="col-4">
+			<div class="row job-item" (click)="openLink(job.Link)">
+				<div class="col-5">
 					<div class="row">
-						<div class="col">
-							<h2>{{ job.Company }}</h2>
+						<div class="col-12 job-title">
+							<h4>{{ job.Title }}</h4>
 						</div>
-						<div class="col">
-							<h3>{{ job.Location }}</h3>
+						<div class="col-12">
+							<h4 *ngIf="job.Pay?.length > 0">{{ job.Pay }}</h4>
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-5">
 					<div class="row">
-						<div class="col">
-							<h2>{{ job.Title }}</h2>
+						<div class="col-12">
+							<h4>{{ job.Company }}</h4>
 						</div>
-						<div class="col" *ngIf="job.Pay">
-							<h3>{{ job.Pay }}</h3>
+						<div class="col-12">
+							<h4>{{ job.Location }}</h4>
 						</div>
 					</div>
+				</div>
+				<div class="col-2 icon-div">
+					<i class="pi pi-angle-right"></i>
 				</div>
 			</div>
 		</ng-container>

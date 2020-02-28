@@ -1,0 +1,42 @@
+.content {
+	background-color: white;
+	margin: auto;
+	width: 80%;
+	margin-top: 2%;
+	border: 3px solid lightgray;
+	padding: 10px;
+	height: 100%;
+
+	.job-item {
+		border: 3px solid lightslategrey;
+		margin: 10px;
+		padding: 20px;
+		text-align: center;
+
+		.job-title {
+			h4 {
+				font-weight: bold;
+			}
+		}
+
+		.icon-div {
+			text-align: right;
+			height: 75px;
+			line-height: 75px;
+		}
+
+		.pi-angle-right {
+			vertical-align: middle;
+			font-size: 2rem;
+			color: lightslategray;
+		}
+	}
+
+	.job-item:hover {
+		border-color: blue;
+	}
+
+	.job-item:hover .pi-angle-right {
+		color: blue;
+	}
+}
