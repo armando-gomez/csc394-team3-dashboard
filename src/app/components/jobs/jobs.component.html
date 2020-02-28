@@ -11,17 +11,17 @@
 							<h4>{{ job.Title }}</h4>
 						</div>
 						<div class="col-12">
-							<h4 *ngIf="job.Pay?.length > 0">{{ job.Pay }}</h4>
+							<h4>{{ job.Company }}</h4>
 						</div>
 					</div>
 				</div>
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12">
-							<h4>{{ job.Company }}</h4>
+							<h4>{{ job.Location }}</h4>
 						</div>
 						<div class="col-12">
-							<h4>{{ job.Location }}</h4>
+							<h4 *ngIf="job.Pay?.length > 0">{{ job.Pay }}</h4>
 						</div>
 					</div>
 				</div>
