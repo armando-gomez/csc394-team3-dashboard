@@ -10,7 +10,7 @@ import { MenuItem } from "primeng/api";
 export class DashboardComponent implements OnInit {
 	images: any[];
 	displaySideMenu = false;
-	pageName = 'home';
+	pageName = 'dashboard';
 
 	constructor() {
 	}
