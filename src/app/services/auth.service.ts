@@ -65,5 +65,9 @@ export class AuthService {
 	public getToken() {
 		return this.authToken;
 	}
+
+	public getLoggedInUser() {
+		return this.user;
+	}
 	
 }

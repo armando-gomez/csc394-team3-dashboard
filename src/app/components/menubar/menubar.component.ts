@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'primeng/api/menuitem';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
 	selector: 'app-menubar',
@@ -7,11 +8,14 @@ import { MenuItem } from 'primeng/api/menuitem';
 	styleUrls: ['./menubar.component.scss']
 })
 export class MenubarComponent implements OnInit {
-	items: MenuItem[];
-
 	@Output() toggleSideMenu = new EventEmitter<boolean>();
+	
+	items: MenuItem[];
+	user;
 
-	constructor() { }
+	constructor(
+		private authService: AuthService
+	) { }
 
 	ngOnInit() {
 		this.items = [
@@ -22,6 +26,8 @@ export class MenubarComponent implements OnInit {
 				tabindex: "0"
 			}
 		];
+
+		this.user = this.authService.getLoggedInUser();
 	}
 
 	openSideMenu(event) {

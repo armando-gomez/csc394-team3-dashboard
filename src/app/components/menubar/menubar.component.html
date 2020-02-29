@@ -1,7 +1,7 @@
 <p-menubar [model]="items">
 	<input type="search" pInputText placeholder="Search">
 	<div class="rightMenu">
-		<i class="pi pi-circle-on"></i>
+		<h4 *ngIf="user">Welcome back, {{ user.firstname }} {{ user.lastname}}</h4>
 		<a><i class="pi pi-caret-down"></i></a>
 	</div>
 </p-menubar>

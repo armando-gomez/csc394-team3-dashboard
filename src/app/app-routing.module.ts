@@ -10,6 +10,7 @@ import { JobsComponent } from './components/jobs/jobs.component';
 import { MessagesComponent } from './components/messages/messages.component';
 
 // canActivate: [AuthGuard]
+
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'login' },
 	{ path: 'login', component: LoginComponent },
