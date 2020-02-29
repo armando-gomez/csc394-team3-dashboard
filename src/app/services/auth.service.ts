@@ -82,6 +82,8 @@ export class AuthService {
 		console.log(localStorage.getItem('user'));
 		this.user = JSON.parse(localStorage.getItem('user'));
 		this.authToken = localStorage.getItem('id_token');
+
+		return this.user;
 	}
 
 }
