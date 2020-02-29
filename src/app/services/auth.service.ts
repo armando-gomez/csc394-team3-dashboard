@@ -75,10 +75,13 @@ export class AuthService {
 	}
 
 	public getLoggedInUser() {
-		if(this.user == null) {
-			this.storeUser(localStorage.getItem("id_token"), localStorage.getItem("user"));
+		if(this.user) {
+			return this.user;
 		}
-		return this.user;
+
+		console.log(localStorage.getItem('user'));
+		this.user = JSON.parse(localStorage.getItem('user'));
+		this.authToken = localStorage.getItem('id_token');
 	}
 
 }
