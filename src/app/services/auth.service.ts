@@ -15,7 +15,7 @@ export class AuthService {
 		private http: HttpClient,
 		private router: Router
 	) {
-		this.storeUser(localStorage.getItem("id_token"), localStorage.getItem("user"));
+		
 	}
 
 	public isLoggedIn() {
@@ -75,6 +75,9 @@ export class AuthService {
 	}
 
 	public getLoggedInUser() {
+		if(this.user == null) {
+			this.storeUser(localStorage.getItem("id_token"), localStorage.getItem("user"));
+		}
 		return this.user;
 	}
 
