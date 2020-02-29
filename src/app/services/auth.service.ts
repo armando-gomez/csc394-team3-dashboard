@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,10 @@ export class AuthService {
 
 	constructor(
 		private http: HttpClient,
-	) { }
+		private router: Router
+	) {
+		this.storeUser(localStorage.getItem("id_token"), localStorage.getItem("user"));
+	}
 
 	public isLoggedIn() {
 		return (localStorage.getItem('id_token') !== null);
@@ -51,10 +55,14 @@ export class AuthService {
 	}
 
 	public storeUser(token, user) {
-		localStorage.setItem('id_token', token);
-		localStorage.setItem('user', JSON.stringify(user));
-		this.authToken = token;
-		this.user = user;
+		if (token == null || user == null) {
+			this.router.navigate(['login']);
+		} else {
+			localStorage.setItem('id_token', token);
+			localStorage.setItem('user', JSON.stringify(user));
+			this.authToken = token;
+			this.user = user;
+		}
 	}
 
 	public loadToken() {
@@ -69,5 +77,5 @@ export class AuthService {
 	public getLoggedInUser() {
 		return this.user;
 	}
-	
+
 }
