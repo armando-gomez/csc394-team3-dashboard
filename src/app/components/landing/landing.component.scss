@@ -13,6 +13,21 @@ h1 {
     font-style: italic;
 }
 
+.landingButton {
+    text-align: center;
+}
+
+.button {
+    color: #ffffff;
+    background: none;
+    background-color: transparent;
+}
+
+.button:hover {
+    color: #acccdd;
+    transition-duration: 0.5s;
+}
+
 /*
 .bg {
     width: 100%;
@@ -27,7 +42,7 @@ h1 {
 .bg {
   background-image: url('../../../assets/img/laptop.jpg');
   height: 1000px;
-  background-position: center;
+  width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
 }
