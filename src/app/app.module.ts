@@ -35,7 +35,7 @@ export function tokenGetter() {
 		ChartsComponent,
 		JobsComponent,
 		MessagesComponent,
-		LandingComponent
+		LandingComponent,
 		MenubarComponent,
 		SidebarComponent
 	],
