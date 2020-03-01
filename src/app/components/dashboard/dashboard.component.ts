@@ -8,25 +8,14 @@ import { MenuItem } from "primeng/api";
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-	items: MenuItem[];
 	images: any[];
 	displaySideMenu = false;
-
-	@Output() toggled = new EventEmitter<boolean>();
+	pageName = 'dashboard';
 
 	constructor() {
 	}
 
 	ngOnInit() {
-		this.items = [
-			{
-				id: 'sidemenu',
-				command: e => this.openSideMenu(e),
-				icon: "pi pi-bars",
-				tabindex: "0"
-			}
-		];
-
 		this.images = [
 			{
 				"src": "image1"
@@ -38,11 +27,9 @@ export class DashboardComponent implements OnInit {
 				"src": "image3"
 			}
 		];
-
-		console.log(this.images);
 	}
 
 	openSideMenu(event) {
-		this.displaySideMenu = true;
+		this.displaySideMenu = event;
 	}
 }
