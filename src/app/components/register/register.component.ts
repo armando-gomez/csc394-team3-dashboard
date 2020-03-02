@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
 			.subscribe(
 				data => {
 					console.log(data);
-					this.router.navigate(['dashboard']);
+					// this.router.navigate(['dashboard']);
 				},
 				err => {
 					this.isSubmitted = false;
