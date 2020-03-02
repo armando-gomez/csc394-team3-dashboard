@@ -52,18 +52,22 @@ export class AuthService {
 		));
 	}
 
-	public updateUser(body) {
+	public updateUser(form, oldEmail) {
 		const httpOptions = {
 			headers: new HttpHeaders({
 				'Content-Type': 'application/json'
 			})
 		};
 
-		return this.http.put('user/update', body, httpOptions).pipe(map(
-			data => {
-				return data;
-			}
-		));
+
+		form.oldEmail = oldEmail;
+		console.log(form);
+
+		// return this.http.put('user/update', form, httpOptions).pipe(map(
+		// 	data => {
+		// 		return data;
+		// 	}
+		// ));
 	}
 
 	public storeUser(token, user) {

@@ -2,10 +2,10 @@
 <app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
 
 <div class="update">
-	<h2 class="update-header">Profile</h2>
+	<h2 class="update-header">Update Profile</h2>
 	<form [formGroup]="updateForm" class="update-container" (ngSubmit)="update()">
 		<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-			<label for="update-email">Email Address</label>
+			<label for="update-email">Update Email Address</label>
 			<input type="email" class="form-control" id="update-email" placeholder="john.smith@mail.depaul.edu" formControlName="email" [email]="true">
 
 			<div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-			<label for="update-password">Password</label>
+			<label for="update-password"> Update Password</label>
 			<input type="password" class="form-control" id="update-password" placeholder="Password" formControlName="password" required>
 			
 			<div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.usertype.errors }">
-			<label for="update-usertype">User Type</label>
+			<label for="update-usertype">Change User Type</label>
 			<select id="update-usertype" class="custom-select" formControlName="usertype"  required>
 				<option value="" disabled>Please select an option</option>
 				<option value="job">Job Seeker</option>
