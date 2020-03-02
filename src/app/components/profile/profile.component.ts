@@ -41,16 +41,16 @@ export class ProfileComponent implements OnInit {
 			return;
 		}
 
-		this.authService.updateUser(this.updateForm.value, this.user.email);
-			// .subscribe(
-			// 	data => {
-			// 		console.log(data);
-			// 	},
-			// 	err => {
-			// 		console.log(err);
-			// 		this.isSubmitted = false;
-			// 	}
-			// );
+		this.authService.updateUser(this.updateForm.value, this.user.email)
+			.subscribe(
+				data => {
+					console.log(data);
+				},
+				err => {
+					console.log(err);
+					this.isSubmitted = false;
+				}
+			);
 	}
 
 	openSideMenu() {

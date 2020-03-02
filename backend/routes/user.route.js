@@ -58,12 +58,12 @@ router.post('/login', (req, res) => {
 						lastname: user.lastname,
 						usertype: user.usertype
 					}
-				})
+				});
 			} else {
 				return res.json({ success: false, msg: 'Wrong password' });
 			}
-		})
-	})
+		});
+	});
 });
 
 router.put('/update', [
@@ -73,8 +73,79 @@ router.put('/update', [
 	if (!errors.isEmpty()) {
 		return res.status(422).json({ errors: errors.array() });
 	}
+	const oldEmail = req.body.oldEmail;
+	const newEmail = req.body.email;
+	const password = req.body.password;
+	const usertype = req.body.usertype;
 
-	console.log(req);
+	if (oldEmail == newEmail) {
+		User.getUserByEmail(oldEmail, (err, user) => {
+			if (err) throw err;
+			if (!user) {
+				return res.json({ success: false, msg: 'User not found' });
+			}
+
+			User.comparePassword(password, user.password, (err, isMatch) => {
+				if (err) throw err;
+				if (isMatch) {
+					const update = { 'usertype': usertype };
+					User.updateUser(oldEmail, update, (err, user) => {
+						if(err) throw err;
+						if(!user) {
+							return res.json({ success: false, msg: 'User not updated' });
+						} else {
+							return res.json({ success: true, msg: 'User updated', user: user });
+						}
+					});
+				} else {
+					const update = { 'password': password, 'usertype': usertype };
+					User.updateUser(oldEmail, update, (err, user) => {
+						if(err) throw err;
+						if(!user) {
+							return res.json({ success: false, msg: 'User not updated' });
+						} else {
+							return res.json({ success: true, msg: 'User updated', user: user });
+						}
+					});
+				}
+			});
+		});
+	} else {
+		User.getUserByEmail(oldEmail, (err, user) => {
+			if (err) throw err;
+			if (!user) {
+				return res.json({ success: false, msg: 'User not found' });
+			}
+
+			User.comparePassword(password, user.password, (err, isMatch) => {
+				if (err) throw err;
+				if (isMatch) {
+					const update = { 'email': newEmail, 'usertype': usertype };
+					User.updateUser(oldEmail, update, (err, user) => {
+						if(err) throw err;
+						if(!user) {
+							return res.json({ success: false, msg: 'User not updated' });
+						} else {
+							return res.json({ success: true, msg: 'User updated', user: user });
+						}
+					});
+				} else {
+					const update = { 'email': newEmail, 'password': password, 'usertype': usertype };
+					User.updateUser(oldEmail, update, (err, user) => {
+						if(err) throw err;
+						if(!user) {
+							return res.json({ success: false, msg: 'User not updated' });
+						} else {
+							return res.json({ success: true, msg: 'User updated', user: user });
+						}
+					});
+				}
+			});
+		});
+
+	}
+
+
 });
 
 module.exports = router;

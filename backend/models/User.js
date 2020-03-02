@@ -51,8 +51,8 @@ module.exports.addUser = function(newUser, callback) {
 	});
 }
 
-module.exports.updateUser = function(user, callback) {
-	User.findOneAndUpdate(user, callback);
+module.exports.updateUser = function(email, update, callback) {
+	User.findOneAndUpdate(email, update, {new: true}, callback);
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {

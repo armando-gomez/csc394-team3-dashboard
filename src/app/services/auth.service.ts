@@ -59,15 +59,13 @@ export class AuthService {
 			})
 		};
 
-
 		form.oldEmail = oldEmail;
-		console.log(form);
 
-		// return this.http.put('user/update', form, httpOptions).pipe(map(
-		// 	data => {
-		// 		return data;
-		// 	}
-		// ));
+		return this.http.put('user/update', form, httpOptions).pipe(map(
+			data => {
+				return data;
+			}
+		));
 	}
 
 	public storeUser(token, user) {
