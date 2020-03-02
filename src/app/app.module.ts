@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from "primeng/menubar";
 import { CarouselModule } from 'primeng/carousel';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -21,6 +22,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export function tokenGetter() {
 	return localStorage.getItem('id_token');
@@ -37,7 +39,8 @@ export function tokenGetter() {
 		MessagesComponent,
 		LandingComponent,
 		MenubarComponent,
-		SidebarComponent
+		SidebarComponent,
+		ProfileComponent
 	],
 	imports: [
 		BrowserModule,
@@ -49,6 +52,7 @@ export function tokenGetter() {
 		SidebarModule,
 		MenubarModule,
 		CarouselModule,
+		OverlayPanelModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,

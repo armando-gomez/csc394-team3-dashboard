@@ -1,7 +1,18 @@
 <p-menubar [model]="items">
-	<!-- <input type="search" pInputText placeholder="Search"> -->
-	<div class="rightMenu">
-		<p *ngIf="user">Welcome back, {{ user.firstname }} {{ user.lastname}}</p>
-		<a><i class="pi pi-caret-down"></i></a>
+	<div class="right-menu" (click)="op.toggle($event, opTarget)">
+		<a class="right-menuitem">
+			<span class="right-menuitem-label">Welcome Back, {{ user.firstname}} {{ user.lastname }}</span>
+			<span class="pi pi-caret-down right-menuitem-icon" #opTarget></span>
+		</a>
 	</div>
 </p-menubar>
+
+<p-overlayPanel #op [dismissable]="true">
+	<div class="container">
+		<ul class="list-group list-group-flush">
+			<button type="button" class="list-group-item list-group-item-action" (click)="openProfile()"  >Profile</button>
+			<button type="button" class="list-group-item list-group-item-action" >Settings</button>
+			<button type="button" class="list-group-item list-group-item-action" >Logout</button>
+		</ul>
+	</div>
+</p-overlayPanel>
