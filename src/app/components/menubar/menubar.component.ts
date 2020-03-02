@@ -43,4 +43,9 @@ export class MenubarComponent implements OnInit {
 		var profile_id = this.user.firstname + this.user.lastname;
 		this.router.navigate(['profile', profile_id]);
 	}
+
+	logout() {
+		this.authService.logout();
+		this.router.navigate(['landing']);
+	}
 }

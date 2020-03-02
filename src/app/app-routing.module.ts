@@ -16,17 +16,18 @@ import { ProfileComponent } from './components/profile/profile.component';
 const routes: Routes = [
 	{ path: '', pathMatch: 'full', redirectTo: 'landing' },
 	{ path: 'login', component: LoginComponent },
-	{ path: 'dashboard', component: DashboardComponent, },
-	{ path: 'register', component: RegisterComponent },
-	{ path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]  },
-	{ path: 'jobs', component: JobsComponent, canActivate: [AuthGuard]  },
-	{ path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]  },
 	{ path: 'landing', component: LandingComponent },
-	{ path: 'profile/:id', component: ProfileComponent, }
+	{ path: 'register', component: RegisterComponent },
+	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+	{ path: 'charts', component: ChartsComponent, canActivate: [AuthGuard] },
+	{ path: 'jobs', component: JobsComponent, canActivate: [AuthGuard] },
+	{ path: 'messages', component: MessagesComponent, canActivate: [AuthGuard] },
+	{ path: 'profile/:id', component: ProfileComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

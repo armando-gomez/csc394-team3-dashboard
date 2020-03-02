@@ -10,9 +10,8 @@
 <p-overlayPanel #op [dismissable]="true">
 	<div class="container">
 		<ul class="list-group list-group-flush">
-			<button type="button" class="list-group-item list-group-item-action" (click)="openProfile()"  >Profile</button>
-			<button type="button" class="list-group-item list-group-item-action" >Settings</button>
-			<button type="button" class="list-group-item list-group-item-action" >Logout</button>
+			<button type="button" class="list-group-item list-group-item-action" (click)="openProfile()">Profile</button>
+			<button type="button" class="list-group-item list-group-item-action" (click)="logout()" >Logout</button>
 		</ul>
 	</div>
 </p-overlayPanel>
