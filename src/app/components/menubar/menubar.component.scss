@@ -1,12 +1,28 @@
-::ng-deep .ui-menubar-custom {
-	width: 80%;
+// ::ng-deep .ui-menubar {
+// 	padding-left: 2% !important;
+// 	padding-right: 2% !important;
+// }
 
-	input {
-		width: 60%;
+::ng-deep .ui-menubar .ui-menubar-custom {
+	padding: 0;
+
+	.right-menu {
+		display: block;
+		padding: 0.714em 0.857em;
+
+		.right-menuitem {
+			display: block;
+			position: relative;
+
+			.right-menuitem-icon  {
+				color: #333333;
+				margin-left: .5em;
+				vertical-align: middle;
+			}
+ 		}
 	}
 
-	.rightMenu {
-		float: right;
-		margin: .25em;
+	.right-menu:hover {
+		background-color: #eaeaea;
 	}
 }
