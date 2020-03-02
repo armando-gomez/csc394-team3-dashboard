@@ -42,8 +42,18 @@ export class RegisterComponent implements OnInit {
 		this.authService.registerUser(this.registerForm.value)
 			.subscribe(
 				data => {
-					console.log(data);
-					// this.router.navigate(['dashboard']);
+					var register = JSON.parse(JSON.stringify(data));
+					if (register.success) {
+						console.log(register.user);
+						// this.authService.loginUser(register.user)
+						// 	.subscribe(
+						// 		data => {
+						// 			var json = JSON.parse(JSON.stringify(data));
+						// 			this.authService.storeUser(json.token, json.user);
+						// 			this.router.navigate(['dashboard']);
+						// 		}
+						// 	);
+					}
 				},
 				err => {
 					this.isSubmitted = false;
