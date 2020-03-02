@@ -9,15 +9,19 @@ import { ChartsComponent } from './components/charts/charts.component';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { MessagesComponent } from './components/messages/messages.component';
 
-// canActivate: [AuthGuard]
+import { LandingComponent } from './components/landing/landing.component';
+
+
 const routes: Routes = [
-	{ path: '', pathMatch: 'full', redirectTo: 'login' },
+	// { path: '', pathMatch: 'full', redirectTo: 'login' },
+	{ path: '', pathMatch: 'full', redirectTo: 'landing' },
 	{ path: 'login', component: LoginComponent },
-	{ path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]}, 
-	{ path: 'register', component: RegisterComponent},
-	{ path: 'charts', component: ChartsComponent, canActivate: [AuthGuard]},
-	{ path: 'jobs', component: JobsComponent, canActivate: [AuthGuard]},
-	{ path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]}
+	{ path: 'dashboard', component: DashboardComponent,  }, // canActivate: [AuthGuard]
+	{ path: 'register', component: RegisterComponent },
+	{ path: 'charts', component: ChartsComponent },
+	{ path: 'jobs', component: JobsComponent },
+	{ path: 'messages', component: MessagesComponent },
+	{ path: 'landing', component: LandingComponent }
 ];
 
 @NgModule({
