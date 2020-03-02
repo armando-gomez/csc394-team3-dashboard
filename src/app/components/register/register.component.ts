@@ -43,16 +43,16 @@ export class RegisterComponent implements OnInit {
 			.subscribe(
 				data => {
 					var register = JSON.parse(JSON.stringify(data));
-					if (register.success) {
-						console.log(register.user);
-						// this.authService.loginUser(register.user)
-						// 	.subscribe(
-						// 		data => {
-						// 			var json = JSON.parse(JSON.stringify(data));
-						// 			this.authService.storeUser(json.token, json.user);
-						// 			this.router.navigate(['dashboard']);
-						// 		}
-						// 	);
+					if (register.success == "true" || register.success == true) {
+						this.authService.loginUser(register.user)
+							.subscribe(
+								data => {
+									console.log(data);
+									var json = JSON.parse(JSON.stringify(data));
+									this.authService.storeUser(json.token, json.user);
+									// this.router.navigate(['dashboard']);
+								}
+							);
 					}
 				},
 				err => {
