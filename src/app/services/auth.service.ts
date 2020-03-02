@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'
@@ -31,7 +30,7 @@ export class AuthService {
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.http.post('api/register', user, httpOptions).pipe(map(
+		return this.http.post('user/register', user, httpOptions).pipe(map(
 			data => {
 				return data;
 			}
@@ -44,7 +43,7 @@ export class AuthService {
 				'Content-Type': 'application/json'
 			})
 		};
-		return this.http.post('api/login', user, httpOptions).pipe(map(
+		return this.http.post('user/login', user, httpOptions).pipe(map(
 			data => {
 				return data;
 			}
@@ -63,5 +62,8 @@ export class AuthService {
 		this.authToken = token;
 	}
 
+	public getToken() {
+		return this.authToken;
+	}
 	
 }

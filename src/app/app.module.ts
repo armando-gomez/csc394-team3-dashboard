@@ -8,10 +8,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {InputSwitchModule} from 'primeng/inputswitch';
+import { SidebarModule } from 'primeng/sidebar';
+import { MenubarModule } from "primeng/menubar";
+import { CarouselModule } from 'primeng/carousel';
+
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { JobsComponent } from './components/jobs/jobs.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { LandingComponent } from './components/landing/landing.component';
+import { MenubarComponent } from './components/menubar/menubar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 export function tokenGetter() {
 	return localStorage.getItem('id_token');
@@ -23,15 +32,23 @@ export function tokenGetter() {
 		LoginComponent,
 		DashboardComponent,
 		RegisterComponent,
+		ChartsComponent,
+		JobsComponent,
+		MessagesComponent,
+		LandingComponent,
+		MenubarComponent,
+		SidebarComponent
 	],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
 		BrowserAnimationsModule,
-		InputSwitchModule,
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
+		SidebarModule,
+		MenubarModule,
+		CarouselModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,

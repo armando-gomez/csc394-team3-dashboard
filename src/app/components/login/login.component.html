@@ -3,10 +3,11 @@
 	<form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
 		<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
 			<label for="login-email">Email Address</label>
-			<input type="email" class="form-control" id="login-email" placeholder="john.smith@mail.depaul.edu" formControlName="email">
+			<input type="email" class="form-control" id="login-email" placeholder="john.smith@mail.depaul.edu" formControlName="email" [email]="true">
 
 			<div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
 				<div *ngIf="formControls.email.errors.required">Email is required</div>
+				<div *ngIf="formControls.email.errors.email">Valid email is required</div>
 			</div>
 		</div>
 

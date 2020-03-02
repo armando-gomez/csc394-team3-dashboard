@@ -1,0 +1,43 @@
+h1 {
+    text-align: center;
+}
+
+.title {
+    margin-top: 0px;
+    color: #ffffff;
+}
+
+.description {
+    color: #ffffff;
+    font-family: "Spartan";
+    text-align: center;
+    font-weight: 300;
+}
+
+.landingButton {
+    text-align: center;
+}
+
+.button2 {
+    color: #ffffff;
+    background: none;
+    background-color: transparent;
+    margin: -10px 0px 5px 5px;
+    padding: 3px;
+    text-align: center;
+    font-size: 0.7vw;
+    width: 5%;
+}
+
+.button2:hover {
+    color: #acccdd;
+    transition-duration: 0.5s;
+}
+
+.bg {
+  background-image: url('../../../assets/img/laptop.jpg');
+  height: 1000px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
