@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 				},
 				err => {
 					this.isSubmitted = false;
-					this.router.navigate(['login']);
+					this.router.navigate(['landing']);
 				}
 			);
 	}

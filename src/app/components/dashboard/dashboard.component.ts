@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-dashboard',
@@ -10,10 +12,16 @@ export class DashboardComponent implements OnInit {
 	displaySideMenu = false;
 	pageName = 'dashboard';
 
-	constructor() {
+	constructor(
+		private authService: AuthService,
+		private router: Router
+	) {
 	}
 
 	ngOnInit() {
+		if(!this.authService.isLoggedIn()) {
+			this.router.navigate(['login']);
+		}
 		this.images = [
 			{
 				"src": "image1"
