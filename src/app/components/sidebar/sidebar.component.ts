@@ -17,6 +17,6 @@ export class SidebarComponent implements OnInit {
 	}
 
 	sidebarHide() {
-		this.sideBarState.emit(false);
+		this.sideBarState.emit();
 	}
 }
