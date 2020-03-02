@@ -52,6 +52,20 @@ export class AuthService {
 		));
 	}
 
+	public updateUser(body) {
+		const httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		};
+
+		return this.http.put('user/update', body, httpOptions).pipe(map(
+			data => {
+				return data;
+			}
+		));
+	}
+
 	public storeUser(token, user) {
 		if (token == null || user == null) {
 			this.router.navigate(['login']);

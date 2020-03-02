@@ -8,28 +8,28 @@ const config = require('../config/database');
 let User = require('../models/User');
 
 router.post('/register', [
-		check('email').isEmail()
-	], (req, res, next) => {
-		const errors = validationResult(req);
-		if(!errors.isEmpty()) {
-			return res.status(422).json({errors: errors.array() });
-		}
-		
-		let newUser = new User({
-			email: req.body.email,
-			password: req.body.password,
-			firstname: req.body.firstname,
-			lastname: req.body.lastname,
-			usertype: req.body.usertype
-		});
+	check('email').isEmail()
+], (req, res, next) => {
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+		return res.status(422).json({ errors: errors.array() });
+	}
 
-		User.addUser(newUser, (err, user) => {
-			if (err) {
-				res.json({ success: false, msg: 'Failed to register user' });
-			} else {
-				res.json({ success: true, msg: 'User registered', user: user });
-			}
-		});
+	let newUser = new User({
+		email: req.body.email,
+		password: req.body.password,
+		firstname: req.body.firstname,
+		lastname: req.body.lastname,
+		usertype: req.body.usertype
+	});
+
+	User.addUser(newUser, (err, user) => {
+		if (err) {
+			res.json({ success: false, msg: 'Failed to register user' });
+		} else {
+			res.json({ success: true, msg: 'User registered', user: user });
+		}
+	});
 });
 
 router.post('/login', (req, res) => {
@@ -64,6 +64,17 @@ router.post('/login', (req, res) => {
 			}
 		})
 	})
-})
+});
+
+router.put('/update', [
+	check('email').isEmail()
+], (req, res) => {
+	const errors = validationResult(req);
+	if (!errors.isEmpty()) {
+		return res.status(422).json({ errors: errors.array() });
+	}
+
+	console.log(req);
+});
 
 module.exports = router;
