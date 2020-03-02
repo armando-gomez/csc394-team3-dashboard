@@ -18,27 +18,21 @@ h1 {
     text-align: center;
 }
 
-.button {
+.button2 {
     color: #ffffff;
     background: none;
     background-color: transparent;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 0.7vw;
+    width: 5%;
 }
 
-.button:hover {
+.button2:hover {
     color: #acccdd;
     transition-duration: 0.5s;
 }
-
-/*
-.bg {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-*/
-
 
 .bg {
   background-image: url('../../../assets/img/laptop.jpg');
