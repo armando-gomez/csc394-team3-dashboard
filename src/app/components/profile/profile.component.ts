@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-profile',
@@ -17,7 +18,8 @@ export class ProfileComponent implements OnInit {
 
 	constructor(
 		private authService: AuthService,
-		private formBuilder: FormBuilder
+		private formBuilder: FormBuilder,
+		private router: Router
 	) { }
 
 	ngOnInit() {
@@ -44,7 +46,9 @@ export class ProfileComponent implements OnInit {
 		this.authService.updateUser(this.updateForm.value, this.user.email)
 			.subscribe(
 				data => {
-					console.log(data);
+					var json = JSON.parse(JSON.stringify(data));
+					this.authService.storeUser(json.token, json.user);
+					this.router.navigate(['dashboard']);
 				},
 				err => {
 					console.log(err);

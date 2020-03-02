@@ -94,7 +94,15 @@ router.put('/update', [
 						if(!user) {
 							return res.json({ success: false, msg: 'User not updated' });
 						} else {
-							return res.json({ success: true, msg: 'User updated', user: user });
+							const token = jwt.sign({ data: user }, config.secret, {
+								expiresIn: 604800
+							});
+							return res.json({
+								success: true,
+								token: 'JWT' + token,
+								msg: 'User updated',
+								user: user
+							});
 						}
 					});
 				} else {
@@ -104,7 +112,15 @@ router.put('/update', [
 						if(!user) {
 							return res.json({ success: false, msg: 'User not updated' });
 						} else {
-							return res.json({ success: true, msg: 'User updated', user: user });
+							const token = jwt.sign({ data: user }, config.secret, {
+								expiresIn: 604800
+							});
+							return res.json({
+								success: true,
+								token: 'JWT' + token,
+								msg: 'User updated',
+								user: user
+							});
 						}
 					});
 				}
@@ -126,7 +142,15 @@ router.put('/update', [
 						if(!user) {
 							return res.json({ success: false, msg: 'User not updated' });
 						} else {
-							return res.json({ success: true, msg: 'User updated', user: user });
+							const token = jwt.sign({ data: user }, config.secret, {
+								expiresIn: 604800
+							});
+							return res.json({
+								success: true,
+								token: 'JWT' + token,
+								msg: 'User updated',
+								user: user
+							});
 						}
 					});
 				} else {
@@ -136,7 +160,15 @@ router.put('/update', [
 						if(!user) {
 							return res.json({ success: false, msg: 'User not updated' });
 						} else {
-							return res.json({ success: true, msg: 'User updated', user: user });
+							const token = jwt.sign({ data: user }, config.secret, {
+								expiresIn: 604800
+							});
+							 return res.json({
+								success: true,
+								token: 'JWT' + token,
+								msg: 'User updated',
+								user: user
+							});
 						}
 					});
 				}
