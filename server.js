@@ -20,7 +20,7 @@ const jobRoute = require('./backend/routes/jobpost.route');
 const app = express();
 
 corsOptions = {
-	origin: "https://dashboard-armando-gomez.herokuapp.com",
+	origin: "https://team3-dashboard-chae.herokuapp.com",
 	optionsSuccessStatus: 200
 };
 
