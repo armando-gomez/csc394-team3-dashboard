@@ -14,4 +14,7 @@ export class ProfileComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	openSideMenu(event) {
+		this.displaySideMenu = event;
+	}
 }
