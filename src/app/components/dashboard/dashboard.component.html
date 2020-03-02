@@ -1,5 +1,5 @@
-<app-menubar (toggleSideMenu)="openSideMenu($event)"></app-menubar>
-<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName"></app-sidebar>
+<app-menubar (toggleSideMenu)="openSideMenu()"></app-menubar>
+<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
 
 <div class="container content">
 	<div class="row">
