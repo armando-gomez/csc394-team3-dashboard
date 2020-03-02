@@ -22,4 +22,8 @@ export class ProfileComponent implements OnInit {
 	openSideMenu() {
 		this.displaySideMenu = true;
 	}
+
+	updateSideBarState() {
+		this.displaySideMenu = false;
+	}
 }

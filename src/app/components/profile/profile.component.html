@@ -1,2 +1,2 @@
 <app-menubar (toggleSideMenu)="openSideMenu()"></app-menubar>
-<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName"></app-sidebar>
+<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState($event)"></app-sidebar>

@@ -18,4 +18,8 @@ export class ChartsComponent implements OnInit {
 		this.displaySideMenu = true;
 	}
 
+	updateSideBarState() {
+		this.displaySideMenu = false;
+	}
+
 }

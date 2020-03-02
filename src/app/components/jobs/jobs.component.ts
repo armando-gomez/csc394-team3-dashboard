@@ -42,6 +42,10 @@ export class JobsComponent implements OnInit {
 		this.displaySideMenu = true;
 	}
 
+	updateSideBarState() {
+		this.displaySideMenu = false;
+	}
+
 	openLink(url) {
 		window.open(url, "_blank");
 	}

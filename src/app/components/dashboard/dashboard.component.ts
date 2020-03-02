@@ -30,4 +30,8 @@ export class DashboardComponent implements OnInit {
 	openSideMenu() {
 		this.displaySideMenu = true;
 	}
+
+	updateSideBarState() {
+		this.displaySideMenu = false;
+	}
 }
