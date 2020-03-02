@@ -1,6 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { MenuItem } from "primeng/api";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'app-dashboard',
@@ -29,7 +27,7 @@ export class DashboardComponent implements OnInit {
 		];
 	}
 
-	openSideMenu(event) {
-		this.displaySideMenu = event;
+	openSideMenu() {
+		this.displaySideMenu = true;
 	}
 }

@@ -1,11 +1,11 @@
-<p-sidebar [(visible)]="showSideBar">
+<p-sidebar [(visible)]="showSideBar" (onHide)="sidebarHide()">
 	<div class="container">
 		<img src="../../../assets/img/logo.png" alt="logo">
 		<ul class="list-group list-group-flush">
 			<button type="button" [class.active]="page == 'dashboard'" class="list-group-item list-group-item-action"  routerLink="/dashboard">Dashboard</button>
 			<button type="button"  [class.active]="page == 'charts'" class="list-group-item list-group-item-action" routerLink="/charts">Charts</button>
 			<button type="button"  [class.active]="page == 'jobs'" class="list-group-item list-group-item-action" routerLink="/jobs">Jobs</button>
-			<button type="button"  [class.active]="page == 'message'" class="list-group-item list-group-item-action" routerLink="/messages">Messages</button>
+			<button type="button"  [class.active]="page == 'message'" class="list-group-item list-group-item-action" routerLink="/messages">Messages</button> 
 		</ul>
 	</div>
 </p-sidebar>

@@ -8,11 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
 	@Input() showSideBar: boolean;
 	@Input() page: string;
-	
+
 	constructor() { }
 
 	ngOnInit() {
-		
 	}
-
 }

@@ -14,8 +14,8 @@ export class ChartsComponent implements OnInit {
 	ngOnInit() {
 	}
 
-	openSideMenu(event) {
-		this.displaySideMenu = event;
+	openSideMenu() {
+		this.displaySideMenu = true;
 	}
 
 }

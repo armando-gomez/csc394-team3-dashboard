@@ -38,8 +38,8 @@ export class JobsComponent implements OnInit {
 			);
 	}
 
-	openSideMenu(event) {
-		this.displaySideMenu = event;
+	openSideMenu() {
+		this.displaySideMenu = true;
 	}
 
 	openLink(url) {

@@ -23,7 +23,7 @@ export class MenubarComponent implements OnInit {
 		this.items = [
 			{
 				id: 'sidemenu',
-				command: e => this.openSideMenu(e),
+				command: e => this.openSideMenu(),
 				icon: "pi pi-bars",
 				tabindex: "0"
 			}
@@ -32,8 +32,8 @@ export class MenubarComponent implements OnInit {
 		this.user = this.authService.getLoggedInUser();
 	}
 
-	openSideMenu(event) {
-		this.toggleSideMenu.emit(true);
+	openSideMenu() {
+		this.toggleSideMenu.emit();
 	}
 
 	openProfile() {
