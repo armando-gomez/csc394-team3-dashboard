@@ -41,21 +41,16 @@ export class ProfileComponent implements OnInit {
 			return;
 		}
 
-		const body = {
-			oldEmail: this.user.email,
-			formValue: this.updateForm.value
-		};
-
-		this.authService.updateUser(body)
-			.subscribe(
-				data => {
-					console.log(data);
-				},
-				err => {
-					console.log(err);
-					this.isSubmitted = false;
-				}
-			);
+		this.authService.updateUser(this.updateForm.value, this.user.email);
+			// .subscribe(
+			// 	data => {
+			// 		console.log(data);
+			// 	},
+			// 	err => {
+			// 		console.log(err);
+			// 		this.isSubmitted = false;
+			// 	}
+			// );
 	}
 
 	openSideMenu() {
