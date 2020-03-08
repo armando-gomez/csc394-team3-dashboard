@@ -70,6 +70,11 @@ module.exports.getJobPostByPosted = function (posted, callback) {
 	JobPost.find(query, callback);
 }
 
+module.exports.getJobPostByTimestamp = function (timestamp, callback) {
+	const query = { Timestamp: timestamp };
+	JobPost.find(query, callback);
+}
+
 
 module.exports.getAllJobPosts = function (filter, callback) {
 	JobPost.find(filter, callback);
