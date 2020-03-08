@@ -13,12 +13,53 @@ router.get('/all', (req, res) => {
 	});
 });
 
-router.get('/all', (req, res) => {
+router.get('/id', (req, res) => {
 	JobPost.getJobPostById({}, (err, jobposts) => {
 		res.json(jobposts);
 	});
 });
 
+router.get('/title', (req, res) => {
+	JobPost.getJobPostByTitle({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/company', (req, res) => {
+	JobPost.getJobPostByCompany({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/location', (req, res) => {
+	JobPost.getJobPostByLocation({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/pay', (req, res) => {
+	JobPost.getJobPostByPay({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/posted', (req, res) => {
+	JobPost.getJobPostByPosted({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/link', (req, res) => {
+	JobPost.getJobPostByLink({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+router.get('/timestamp', (req, res) => {
+	JobPost.getJobPostByTimestamp({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
 
 
 
