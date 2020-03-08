@@ -13,4 +13,13 @@ router.get('/all', (req, res) => {
 	});
 });
 
+router.get('/all', (req, res) => {
+	JobPost.getJobPostById({}, (err, jobposts) => {
+		res.json(jobposts);
+	});
+});
+
+
+
+
 module.exports = router;
