@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http"
+import { ScrollingModule } from "@angular/cdk/scrolling";
+
 import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -59,6 +61,7 @@ export function tokenGetter() {
 		MessageModule, 
 		MessagesModule,
 		PaginatorModule,
+		ScrollingModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,
