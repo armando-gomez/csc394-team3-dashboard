@@ -63,6 +63,7 @@ export class AuthService {
 
 		return this.http.put('user/update', form, httpOptions).pipe(map(
 			data => {
+				console.log(data);
 				return data;
 			}
 		));

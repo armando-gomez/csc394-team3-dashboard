@@ -51,8 +51,23 @@ module.exports.addUser = function(newUser, callback) {
 	});
 }
 
-module.exports.updateUser = function(email, update, callback) {
-	User.findOneAndUpdate(email, update, {new: true}, callback);
+module.exports.updateUser = function(email, newUser, callback) {
+	console.log(newUser.password);
+	bcrypt.genSalt(10, (err, salt) => {
+		bcrypt.hash(newUser.password, salt, (err, hash) => {
+			if(err) throw err;
+			User.getUserByEmail(newUser.email, (err, user) => {
+				if(err) throw err;
+				if(!user) {
+					newUser.password = hash;
+					const update = {'email': newUser.email, 'password': newUser.password, 'usertype': newUser.usertype};
+					const filter = {email: email};
+		
+					User.findOneAndUpdate(filter, update, {new: true}, callback);
+				}
+			});			
+		});
+	});
 }
 
 module.exports.comparePassword = function(candidatePassword, hash, callback) {

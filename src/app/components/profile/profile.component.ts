@@ -27,10 +27,17 @@ export class ProfileComponent implements OnInit {
 		this.updateForm = this.formBuilder.group({
 			email: ['', [Validators.required, Validators.email]],
 			password: ['', Validators.required],
+			update_password: [''],
 			usertype: ['', Validators.required]
 		});
 
-		this.updateForm.setValue({email: this.user.email, password: "", usertype: this.user.usertype});
+		this.updateForm.setValue(
+			{
+				email: this.user.email,
+				password: "",
+				update_password: "",
+				usertype: this.user.usertype
+			});
 	}
 
 	get formControls() {
@@ -39,7 +46,7 @@ export class ProfileComponent implements OnInit {
 
 	update() {
 		this.isSubmitted = true;
-		if(this.updateForm.invalid) {
+		if (this.updateForm.invalid) {
 			return;
 		}
 
@@ -47,6 +54,7 @@ export class ProfileComponent implements OnInit {
 			.subscribe(
 				data => {
 					var json = JSON.parse(JSON.stringify(data));
+					console.log(json);
 					this.authService.storeUser(json.token, json.user);
 					this.router.navigate(['dashboard']);
 				},

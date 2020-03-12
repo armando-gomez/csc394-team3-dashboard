@@ -1,7 +1,7 @@
 <p-menubar [model]="items">
 	<div class="right-menu" (click)="op.toggle($event, opTarget)">
 		<a class="right-menuitem">
-			<span *ngIf="user" class="right-menuitem-label">Welcome , {{ user.firstname}} {{ user.lastname }}</span>
+			<span *ngIf="user" class="right-menuitem-label">Welcome, {{ user.firstname}} {{ user.lastname }}</span>
 			<span class="pi pi-caret-down right-menuitem-icon" #opTarget></span>
 		</a>
 	</div>
