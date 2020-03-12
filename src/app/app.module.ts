@@ -11,7 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidebarModule } from 'primeng/sidebar';
 import { MenubarModule } from "primeng/menubar";
 import { CarouselModule } from 'primeng/carousel';
-import {OverlayPanelModule} from 'primeng/overlaypanel';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { MessagesModule } from "primeng/messages";
+import { MessageModule } from "primeng/message";
+import { PaginatorModule } from "primeng/paginator";
 
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -53,6 +56,9 @@ export function tokenGetter() {
 		MenubarModule,
 		CarouselModule,
 		OverlayPanelModule,
+		MessageModule, 
+		MessagesModule,
+		PaginatorModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,

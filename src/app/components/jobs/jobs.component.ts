@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JobService } from 'src/app/services/job.service';
 import { JobPost } from "../../interfaces/job-post";
-import * as sample from '../../sample.json';
-import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-jobs',
@@ -10,32 +8,39 @@ import { environment } from 'src/environments/environment';
 	styleUrls: ['./jobs.component.scss']
 })
 export class JobsComponent implements OnInit {
-	jobs;
+	jobsData;
+	totalJobs;
+	displayJobs;
 	displaySideMenu = false;
+	dataLoaded = false;
 	pageName = 'jobs';
+	rowsPerPage = 15;
 
 	constructor(
 		private jobService: JobService
 	) { }
 
 	ngOnInit() {
-		if(environment.production) {
-			this.loadJobPosts();
-		} else {
-			this.jobs = (sample as any).default
-		}
+		this.getJobData();
 	}
 
-	loadJobPosts() {
+	getJobData() {
 		this.jobService.getAllJobPosts()
 			.subscribe(
 				data => {
-					this.jobs = data;
+					this.jobsData = data;
+					this.totalJobs = this.jobsData.length;
+					this.displayJobs = this.jobsData.slice(0, this.rowsPerPage);
 				},
 				err => {
 					console.log(err);
 				}
 			);
+	}
+
+	paginate(event) {
+		console.log(event);
+		this.displayJobs = this.jobsData.slice(event.first, event.first + event.rows);
 	}
 
 	openSideMenu() {

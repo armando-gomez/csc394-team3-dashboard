@@ -2,6 +2,7 @@
 <app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
 
 <div class="update">
+	<p-messages *ngIf="message" [value]="message" [closable]="false"></p-messages>
 	<h2 class="update-header">Update Profile</h2>
 	<form [formGroup]="updateForm" class="update-container" (ngSubmit)="update()">
 		<div class="form-group" [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">

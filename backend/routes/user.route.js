@@ -167,20 +167,21 @@ router.put('/update', [
 						user.usertype = usertype;
 						User.updateUser(oldEmail, user, (err, update) => {
 							if (err) {
-								res.json({ succes: false, msg: 'Email already exists' });
-							}
-							if (!update) {
-								res.json({ succes: false, msg: 'User not updated' });
+								res.status(405).send({error: err});
 							} else {
-								const token = jwt.sign({ data: update }, config.secret, {
-									expiresIn: 604800
-								});
-								res.json({
-									success: true,
-									token: 'JWT' + token,
-									msg: 'User updated',
-									user: update
-								});
+								if (!update) {
+									res.json({ succes: false, msg: 'User not updated' });
+								} else {
+									const token = jwt.sign({ data: update }, config.secret, {
+										expiresIn: 604800
+									});
+									res.json({
+										success: true,
+										token: 'JWT' + token,
+										msg: 'User updated',
+										user: update
+									});
+								}
 							}
 						});
 					} else {
@@ -238,7 +239,7 @@ router.put('/update', [
 					}
 				}
 			} else {
-				res.json({ success: false, msg: 'Current Password Not Correct' });
+				res.status(405).send({error: "Incorrect current password"});
 			}
 		});
 	});

@@ -1,10 +1,9 @@
 <app-menubar (toggleSideMenu)="openSideMenu()"></app-menubar>
 <app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
 
-
 <div class="container">
-	<div class="content" *ngIf="jobs">
-		<ng-container *ngFor="let job of jobs">
+	<div class="content">
+		<ng-container *ngFor="let job of displayJobs">
 			<div class="row job-item">
 				<div class="col-5">
 					<div class="row">
@@ -31,5 +30,6 @@
 				</div>
 			</div>
 		</ng-container>
+		<p-paginator [rows]="15" [totalRecords]="totalJobs" (onPageChange)="paginate($event)"></p-paginator>
 	</div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Message } from "primeng/api";
 
 @Component({
 	selector: 'app-profile',
@@ -14,7 +15,7 @@ export class ProfileComponent implements OnInit {
 	pageName = 'profile';
 	updateForm: FormGroup
 	user;
-
+	message: Message[] = [];
 
 	constructor(
 		private authService: AuthService,
@@ -56,11 +57,12 @@ export class ProfileComponent implements OnInit {
 					var json = JSON.parse(JSON.stringify(data));
 					console.log(json);
 					this.authService.storeUser(json.token, json.user);
-					this.router.navigate(['dashboard']);
+					this.message = [];
+					this.message.push({severity:'success', summary:"User updated."})
 				},
 				err => {
-					console.log(err);
-					this.isSubmitted = false;
+					this.message = [];
+					this.message.push({severity:'error', summary:err.error.error});
 				}
 			);
 	}
