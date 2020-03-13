@@ -28,6 +28,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 export function tokenGetter() {
 	return localStorage.getItem('id_token');
@@ -45,7 +46,8 @@ export function tokenGetter() {
 		LandingComponent,
 		MenubarComponent,
 		SidebarComponent,
-		ProfileComponent
+		ProfileComponent,
+		TruncatePipe
 	],
 	imports: [
 		BrowserModule,

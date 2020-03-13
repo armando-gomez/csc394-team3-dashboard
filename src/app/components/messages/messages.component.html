@@ -1,2 +1,36 @@
 <app-menubar (toggleSideMenu)="openSideMenu()"></app-menubar>
 <app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
+
+<div class="container">
+	<div class="content">
+		<ng-container *ngFor="let message of inbox">
+			<div class="row message-item">
+				<div class="col-5">
+					<div class="row">
+						<div class="col-12 message-name">
+							<h4>{{ message.firstname }} {{ message.lastname }}</h4>
+						</div>
+						<div class="col-12">
+							<h4>{{ message.usertype }}</h4>
+						</div>
+					</div>
+				</div>
+				<div class="col-5">
+					<div class="row">
+						<div class="col-12">
+							<h4>Subject:</h4>
+							<p>{{ message.subject }}</p>
+						</div>
+						<div class="col-12">
+							<h4>Message:</h4>
+							<p>{{ message.body | truncate:100 }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-2 icon-div" (click)="openLink(job.Link)">
+					<i class="pi pi-angle-right"></i>
+				</div>
+			</div>
+		</ng-container>
+	</div>
+</div>
