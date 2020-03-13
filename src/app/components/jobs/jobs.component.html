@@ -18,14 +18,14 @@
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12">
-							<h5>{{ job.City }}, {{ job.State }}</h5>
+							<h5>{{ job.City }}<span *ngIf="job.State">, {{ job.State }}</span></h5>
 						</div>
 						<div class="col-12">
 							<ng-container *ngIf="job.Equity === 'True'">
 								<p>Equity Offered</p>
 							</ng-container>
 							<ng-container *ngIf="job.lowPay > 0 && job.highPay > 0 ">
-								<p>{{ job.lowPay | currency }} - {{ job.highPay | currency }}</p>
+								<p>{{ job.lowPay | currency : 'USD' : 'symbol' : '1.0-0' }} - {{ job.highPay | currency : 'USD' : 'symbol' : '1.0-0' }}</p>
 							</ng-container>
 						</div>
 					</div>
