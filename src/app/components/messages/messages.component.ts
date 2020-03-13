@@ -24,5 +24,4 @@ export class MessagesComponent implements OnInit {
 	updateSideBarState() {
 		this.displaySideMenu = false;
 	}
-
 }

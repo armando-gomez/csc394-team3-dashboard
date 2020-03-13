@@ -20,30 +20,20 @@
 			}
 		}
 
+		.message-usertype {
+			p {
+				text-align: center;
+			}
+		}
+
 		.icon-div {
 			text-align: center;
 			height: 75px;
 			line-height: 75px;
 		}
-
-		.pi-angle-right {
-			vertical-align: middle;
-			font-size: 2rem;
-			color: lightslategray;
-		}
 	}
 
 	.message-item:hover {
 		border-color: blue;
-	}
-
-	.message-item:hover .pi-angle-right {
-		color: blue;
-	}
-
-	.message-item:hover .icon-div i{
-		background-color: #eaeaea;
-		border-radius: 50%;
-		padding: 10px;
 	}
 }

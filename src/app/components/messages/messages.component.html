@@ -10,8 +10,8 @@
 						<div class="col-12 message-name">
 							<h4>{{ message.firstname }} {{ message.lastname }}</h4>
 						</div>
-						<div class="col-12">
-							<h4>{{ message.usertype }}</h4>
+						<div class="col-12 message-usertype">
+							<p>{{ message.usertype }}</p>
 						</div>
 					</div>
 				</div>
@@ -23,12 +23,9 @@
 						</div>
 						<div class="col-12">
 							<h4>Message:</h4>
-							<p>{{ message.body | truncate:100 }}</p>
+							<p>{{ message.body }}</p>
 						</div>
 					</div>
-				</div>
-				<div>
-					<i class="pi pi-angle-right"></i>
 				</div>
 			</div>
 		</ng-container>
