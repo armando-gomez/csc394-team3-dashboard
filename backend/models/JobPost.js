@@ -31,7 +31,7 @@ let JobPostSchema = new Schema({
 		required: true
 	}
 }, {
-	collection: 'JobApps'
+	collection: 'NewJobData'
 });
 
 const JobPost = module.exports = mongoose.model('JobPost', JobPostSchema);

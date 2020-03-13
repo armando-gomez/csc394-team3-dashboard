@@ -39,7 +39,6 @@ export class JobsComponent implements OnInit {
 	}
 
 	paginate(event) {
-		console.log(event);
 		this.displayJobs = this.jobsData.slice(event.first, event.first + event.rows);
 	}
 

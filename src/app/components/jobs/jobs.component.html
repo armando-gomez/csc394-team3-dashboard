@@ -8,20 +8,25 @@
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12 job-title">
-							<h4>{{ job.Title }}</h4>
+							<h5>{{ job.Title }}</h5>
 						</div>
 						<div class="col-12">
-							<h4>{{ job.Company }}</h4>
+							<p>{{ job.Company }}</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12">
-							<h4>{{ job.Location }}</h4>
+							<h5>{{ job.City }}, {{ job.State }}</h5>
 						</div>
 						<div class="col-12">
-							<h4 *ngIf="job.Pay?.length > 0">{{ job.Pay }}</h4>
+							<ng-container *ngIf="job.Equity === 'True'">
+								<p>Equity Offered</p>
+							</ng-container>
+							<ng-container *ngIf="job.lowPay > 0 && job.highPay > 0 ">
+								<p>{{ job.lowPay | currency }} - {{ job.highPay | currency }}</p>
+							</ng-container>
 						</div>
 					</div>
 				</div>
