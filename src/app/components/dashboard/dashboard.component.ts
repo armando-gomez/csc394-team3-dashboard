@@ -8,8 +8,9 @@ import { Router } from '@angular/router';
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-	images: any[];
+	image;
 	displaySideMenu = false;
+	user;
 	pageName = 'dashboard';
 
 	constructor(
@@ -22,17 +23,17 @@ export class DashboardComponent implements OnInit {
 		if(!this.authService.isLoggedIn()) {
 			this.router.navigate(['login']);
 		}
-		this.images = [
-			{
-				"src": "image1"
-			},
-			{
-				"src": "image2"
-			},
-			{
-				"src": "image3"
-			}
-		];
+		this.user = this.authService.getLoggedInUser();
+
+		if(this.user.usertype === "job") {
+			this.image = "job";
+		} else if(this.user.usertype === "hr") {
+			this.image = "hr";
+		} else if(this.user.usertype === "mgmt") {
+			this.image = "mgmt";
+		} else if(this.user.usertype === "wp") {
+			this.image = "wp";
+		}
 	}
 
 	openSideMenu() {

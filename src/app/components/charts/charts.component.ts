@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SelectItem } from 'primeng/api/selectitem';
 
 @Component({
 	selector: 'app-charts',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
 	displaySideMenu = false;
+	displayDialog = false;
 	pageName = 'charts';
 
-	constructor() { }
+	charts: SelectItem[];
+	toggleChartSelect: string;
+
+	selected: string = "highPay";
+
+	constructor() { 
+		this.charts = [
+			{label: 'Change Chart', icon:'pi pi-chart-bar', value:'chart'}
+		];
+	}
 
 	ngOnInit() {
 	}
@@ -21,5 +32,14 @@ export class ChartsComponent implements OnInit {
 	updateSideBarState() {
 		this.displaySideMenu = false;
 	}
+
+	toggleDialog(event) {
+		this.displayDialog = true;
+	}
+
+	selectChart(name) {
+		this.selected = name;
+	}
+
 
 }

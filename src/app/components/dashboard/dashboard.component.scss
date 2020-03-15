@@ -1,5 +1,22 @@
 .content {
 	color: white;
+	margin: auto;
+	overflow-x: hidden;
+
+	.hero-image {
+		text-align: center;
+		overflow-x: hidden;
+
+		img {
+			width: 1600px;
+			height: 500px;
+		}
+	}
+
+	.row:nth-child(2) {
+		background-color: lightslategrey;
+		padding-top: 10px;
+	}
 }
 
 .image-details {
