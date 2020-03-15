@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 import { User } from "../../interfaces/user";
 import { AuthService } from "../../services/auth.service";
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class LoginComponent implements OnInit {
 		if (this.loginForm.invalid) {
 			return;
 		}
-
+		
 		this.authService.loginUser(this.loginForm.value)
 			.subscribe(
 				data => {
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
 				},
 				err => {
 					this.isSubmitted = false;
-					this.router.navigate(['login']);
+					this.router.navigate(['landing']);
 				}
 			);
 	}

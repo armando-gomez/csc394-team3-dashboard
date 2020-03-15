@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from "../interfaces/user";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,7 +13,8 @@ export class AuthService {
 
 	constructor(
 		private http: HttpClient,
-	) { }
+		private router: Router
+	) {}
 
 	public isLoggedIn() {
 		return (localStorage.getItem('id_token') !== null);
@@ -50,11 +52,32 @@ export class AuthService {
 		));
 	}
 
+	public updateUser(form, oldEmail) {
+		const httpOptions = {
+			headers: new HttpHeaders({
+				'Content-Type': 'application/json'
+			})
+		};
+
+		form.oldEmail = oldEmail;
+
+		return this.http.put('user/update', form, httpOptions).pipe(map(
+			data => {
+				console.log(data);
+				return data;
+			}
+		));
+	}
+
 	public storeUser(token, user) {
-		localStorage.setItem('id_token', token);
-		localStorage.setItem('user', JSON.stringify(user));
-		this.authToken = token;
-		this.user = user;
+		if (token == null || user == null) {
+			this.router.navigate(['login']);
+		} else {
+			localStorage.setItem('id_token', token);
+			localStorage.setItem('user', JSON.stringify(user));
+			this.authToken = token;
+			this.user = user;
+		}
 	}
 
 	public loadToken() {
@@ -65,5 +88,16 @@ export class AuthService {
 	public getToken() {
 		return this.authToken;
 	}
-	
+
+	public getLoggedInUser() {
+		if(this.user) {
+			return this.user;
+		}
+
+		this.user = JSON.parse(localStorage.getItem('user'));
+		this.authToken = localStorage.getItem('id_token');
+
+		return this.user;
+	}
+
 }

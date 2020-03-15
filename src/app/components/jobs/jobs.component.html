@@ -1,34 +1,40 @@
-<app-menubar (toggleSideMenu)="openSideMenu($event)"></app-menubar>
-<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName"></app-sidebar>
+<app-menubar (toggleSideMenu)="openSideMenu()"></app-menubar>
+<app-sidebar [showSideBar]="displaySideMenu" [page]="pageName" (sideBarState)="updateSideBarState()"></app-sidebar>
 
 <div class="container">
-	<div class="content" *ngIf="jobs">
-		<ng-container *ngFor="let job of jobs">
-			<div class="row job-item" (click)="openLink(job.Link)">
+	<div class="content">
+		<ng-container *ngFor="let job of displayJobs">
+			<div class="row job-item">
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12 job-title">
-							<h4>{{ job.Title }}</h4>
+							<h5>{{ job.Title }}</h5>
 						</div>
 						<div class="col-12">
-							<h4>{{ job.Company }}</h4>
+							<p>{{ job.Company }}</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-5">
 					<div class="row">
 						<div class="col-12">
-							<h4>{{ job.Location }}</h4>
+							<h5>{{ job.City }}<span *ngIf="job.State">, {{ job.State }}</span></h5>
 						</div>
 						<div class="col-12">
-							<h4 *ngIf="job.Pay?.length > 0">{{ job.Pay }}</h4>
+							<ng-container *ngIf="job.Equity === 'True'">
+								<p>Equity Offered</p>
+							</ng-container>
+							<ng-container *ngIf="job.lowPay > 0 && job.highPay > 0 ">
+								<p>{{ job.lowPay | currency : 'USD' : 'symbol' : '1.0-0' }} - {{ job.highPay | currency : 'USD' : 'symbol' : '1.0-0' }}</p>
+							</ng-container>
 						</div>
 					</div>
 				</div>
-				<div class="col-2 icon-div">
+				<div class="col-2 icon-div" (click)="openLink(job.Link)">
 					<i class="pi pi-angle-right"></i>
 				</div>
 			</div>
 		</ng-container>
+		<p-paginator [rows]="15" [totalRecords]="totalJobs" (onPageChange)="paginate($event)"></p-paginator>
 	</div>
 </div>

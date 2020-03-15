@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { MenuItem } from "primeng/api";
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-dashboard',
@@ -8,28 +8,39 @@ import { MenuItem } from "primeng/api";
 	styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-	images: any[];
+	image;
 	displaySideMenu = false;
+	user;
 	pageName = 'dashboard';
 
-	constructor() {
+	constructor(
+		private authService: AuthService,
+		private router: Router
+	) {
 	}
 
 	ngOnInit() {
-		this.images = [
-			{
-				"src": "image1"
-			},
-			{
-				"src": "image2"
-			},
-			{
-				"src": "image3"
-			}
-		];
+		if(!this.authService.isLoggedIn()) {
+			this.router.navigate(['login']);
+		}
+		this.user = this.authService.getLoggedInUser();
+
+		if(this.user.usertype === "job") {
+			this.image = "job";
+		} else if(this.user.usertype === "hr") {
+			this.image = "hr";
+		} else if(this.user.usertype === "mgmt") {
+			this.image = "mgmt";
+		} else if(this.user.usertype === "wp") {
+			this.image = "wp";
+		}
 	}
 
-	openSideMenu(event) {
-		this.displaySideMenu = event;
+	openSideMenu() {
+		this.displaySideMenu = true;
+	}
+
+	updateSideBarState() {
+		this.displaySideMenu = false;
 	}
 }
