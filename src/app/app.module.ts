@@ -17,6 +17,10 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { MessagesModule } from "primeng/messages";
 import { MessageModule } from "primeng/message";
 import { PaginatorModule } from "primeng/paginator";
+import { DialogModule } from "primeng/dialog";
+import { SelectButtonModule } from "primeng/selectbutton";
+import { CardModule } from 'primeng/card';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -64,6 +68,10 @@ export function tokenGetter() {
 		MessagesModule,
 		PaginatorModule,
 		ScrollingModule,
+		DialogModule,
+		SelectButtonModule,
+		CardModule,
+		RadioButtonModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,
