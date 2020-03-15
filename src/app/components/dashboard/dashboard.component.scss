@@ -1,11 +1,11 @@
 .content {
 	color: white;
-	width: 90%;
 	margin: auto;
-	background-color: lightslategrey;
+	overflow-x: hidden;
 
 	.hero-image {
 		text-align: center;
+		overflow-x: hidden;
 
 		img {
 			width: 1600px;
@@ -14,6 +14,7 @@
 	}
 
 	.row:nth-child(2) {
+		background-color: lightslategrey;
 		padding-top: 10px;
 	}
 }
