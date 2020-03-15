@@ -40,7 +40,7 @@ router.post('/login', (req, res) => {
 
 	User.getUserByEmail(email, (err, user) => {
 		if (err) throw err;
-		if (!user) {
+		if (!user || user === null) {
 			res.json({ success: false, msg: 'User not found' });
 		}
 
@@ -95,9 +95,6 @@ router.put('/update', [
 						user.password = oldPassword;
 						user.usertype = usertype;
 						User.updateUser(oldEmail, user, (err, update) => {
-							if (err) {
-								res.json({ succes: false, msg: 'Email already exists' });
-							}
 							if (!update) {
 								res.json({ succes: false, msg: 'User not updated' });
 							} else {

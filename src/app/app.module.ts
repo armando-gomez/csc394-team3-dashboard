@@ -21,6 +21,7 @@ import { DialogModule } from "primeng/dialog";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { ButtonModule } from 'primeng/button';
 
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -72,6 +73,7 @@ export function tokenGetter() {
 		SelectButtonModule,
 		CardModule,
 		RadioButtonModule,
+		ButtonModule,
 		JwtModule.forRoot({
 			config: {
 				tokenGetter: tokenGetter,

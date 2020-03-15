@@ -1,79 +1,90 @@
 [
 	{
-	  "firstname": "Lupe",
-	  "lastname": "Rigdon",
-	  "subject": "Nice Profile",
-	  "usertype": "Human Resources",
-	  "body": "Let's connect and speak about your current job and experience."
+		"sender": "email@email.com",
+		"firstname": "Lupe",
+		"lastname": "Rigdon",
+		"subject": "Nice Profile",
+		"usertype": "Human Resources",
+		"body": "Let's connect and speak about your current job and experience."
 	},
 	{
-	  "firstname": "Kim",
-	  "lastname": "Claytor",
-	  "subject": "The secret to Jobs",
-	  "usertype": "Human Resources",
-	  "body": "Pellentesque pulvinar in velit suscipit placerat. Ut quis ultricies quam, vitae consectetur nulla. Phasellus sagittis nunc et interdum pellentesque. Maecenas."
+		"sender": "email@email.com",
+		"firstname": "Kim",
+		"lastname": "Claytor",
+		"subject": "The secret to Jobs",
+		"usertype": "Human Resources",
+		"body": "Pellentesque pulvinar in velit suscipit placerat. Ut quis ultricies quam, vitae consectetur nulla. Phasellus sagittis nunc et interdum pellentesque. Maecenas."
 	},
 	{
-	  "firstname": "Leslee",
-	  "lastname": "Robert",
-	  "subject": "Beware of this 7 Jobs mistakes",
-	  "usertype": "Human Resources",
-	  "body": "Praesent ornare nisi erat, vel dignissim mauris dictum id. Donec sit amet malesuada dui, sit amet egestas erat. Pellentesque habitant."
+		"sender": "email@email.com",
+		"firstname": "Leslee",
+		"lastname": "Robert",
+		"subject": "Beware of this 7 Jobs mistakes",
+		"usertype": "Human Resources",
+		"body": "Praesent ornare nisi erat, vel dignissim mauris dictum id. Donec sit amet malesuada dui, sit amet egestas erat. Pellentesque habitant."
 	},
 	{
-	  "firstname": "Delaine",
-	  "lastname": "Porche",
-	  "subject": "Give me 20 minutes and I'll give you Jobs",
-	  "usertype": "Management",
-	  "body": "Curabitur eget odio rhoncus, rhoncus lectus eget, varius felis. Morbi aliquam, sapien et consequat fermentum, sapien dui accumsan libero, id blandit arcu mi euismod nibh. Proin at consequat ipsum, et."
+		"sender": "email@email.com",
+		"firstname": "Delaine",
+		"lastname": "Porche",
+		"subject": "Give me 20 minutes and I'll give you Jobs",
+		"usertype": "Management",
+		"body": "Curabitur eget odio rhoncus, rhoncus lectus eget, varius felis. Morbi aliquam, sapien et consequat fermentum, sapien dui accumsan libero, id blandit arcu mi euismod nibh. Proin at consequat ipsum, et."
 	},
 	{
-	  "firstname": "Guillermo",
-	  "lastname": "McKitrick",
-	  "subject": "A toast to Jobs",
-	  "usertype": "Job Seekers",
-	  "body": "Suspendisse gravida a magna id efficitur. Aliquam sodales orci a metus ultricies sagittis. Vestibulum pharetra."
+		"sender": "email@email.com",
+		"firstname": "Guillermo",
+		"lastname": "McKitrick",
+		"subject": "A toast to Jobs",
+		"usertype": "Job Seekers",
+		"body": "Suspendisse gravida a magna id efficitur. Aliquam sodales orci a metus ultricies sagittis. Vestibulum pharetra."
 	},
 	{
-	  "firstname": "Rodney",
-	  "lastname": "Pilkington",
-	  "subject": "4 questions answered about Jobs",
-	  "usertype": "Human Resources",
-	  "body": "Donec dictum porttitor justo in fringilla. Proin imperdiet congue risus, sit amet rutrum nunc vestibulum."
+		"sender": "email@email.com",
+		"firstname": "Rodney",
+		"lastname": "Pilkington",
+		"subject": "4 questions answered about Jobs",
+		"usertype": "Human Resources",
+		"body": "Donec dictum porttitor justo in fringilla. Proin imperdiet congue risus, sit amet rutrum nunc vestibulum."
 	},
 	{
-	  "firstname": "Suellen",
-	  "lastname": "Shima",
-	  "subject": "How you can get work almost instantly",
-	  "usertype": "Workforce Planning",
-	  "body": "Phasellus non augue nibh. Pellentesque id orci viverra, congue urna placerat, commodo nulla. Maecenas id ligula at lacus mattis vestibulum. Morbi tempor faucibus tincidunt. Nullam tristique lacinia metus, sit amet."
+		"sender": "email@email.com",
+		"firstname": "Suellen",
+		"lastname": "Shima",
+		"subject": "How you can get work almost instantly",
+		"usertype": "Workforce Planning",
+		"body": "Phasellus non augue nibh. Pellentesque id orci viverra, congue urna placerat, commodo nulla. Maecenas id ligula at lacus mattis vestibulum. Morbi tempor faucibus tincidunt. Nullam tristique lacinia metus, sit amet."
 	},
 	{
-	  "firstname": "Nathan",
-	  "lastname": "Felps",
-	  "subject": "The fastest way to work",
-	  "usertype": "Human Resources",
-	  "body": "Maecenas malesuada hendrerit sem. Phasellus ultrices condimentum sem. Ut tellus erat, luctus vitae molestie et."
+		"sender": "email@email.com",
+		"firstname": "Nathan",
+		"lastname": "Felps",
+		"subject": "The fastest way to work",
+		"usertype": "Human Resources",
+		"body": "Maecenas malesuada hendrerit sem. Phasellus ultrices condimentum sem. Ut tellus erat, luctus vitae molestie et."
 	},
 	{
-	  "firstname": "Astrid",
-	  "lastname": "Weinberg",
-	  "subject": "Do you make these mistakes in work?",
-	  "usertype": "Job Seeker",
-	  "body": "Donec commodo velit porta efficitur fermentum. Integer orci massa, sodales a ullamcorper at, vehicula efficitur nunc. Phasellus quis hendrerit mi. Sed non sem convallis, suscipit lectus pulvinar, efficitur est. Pellentesque."
+		"sender": "email@email.com",
+		"firstname": "Astrid",
+		"lastname": "Weinberg",
+		"subject": "Do you make these mistakes in work?",
+		"usertype": "Job Seeker",
+		"body": "Donec commodo velit porta efficitur fermentum. Integer orci massa, sodales a ullamcorper at, vehicula efficitur nunc. Phasellus quis hendrerit mi. Sed non sem convallis, suscipit lectus pulvinar, efficitur est. Pellentesque."
 	},
 	{
-	  "firstname": "Chrsitana",
-	  "lastname": "Dixon",
-	  "subject": "Let's connect",
-	  "usertype": "Management",
-	  "body": "Morbi aliquam venenatis massa in."
+		"sender": "email@email.com",
+		"firstname": "Chrsitana",
+		"lastname": "Dixon",
+		"subject": "Let's connect",
+		"usertype": "Management",
+		"body": "Morbi aliquam venenatis massa in."
 	},
 	{
-	  "firstname": "Margie",
-	  "lastname": "Lillis",
-	  "subject": "Job Interview Request",
-	  "usertype": "Workforce Planning",
-	  "body": "Suspendisse et justo vitae ante dictum vestibulum. Donec pellentesque elementum dui eu maximus. Suspendisse quis nunc."
+		"sender": "email@email.com",
+		"firstname": "Margie",
+		"lastname": "Lillis",
+		"subject": "Job Interview Request",
+		"usertype": "Workforce Planning",
+		"body": "Suspendisse et justo vitae ante dictum vestibulum. Donec pellentesque elementum dui eu maximus. Suspendisse quis nunc."
 	}
-  ]
+]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as json from './messages.json';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
 	selector: 'app-messages',
@@ -11,10 +12,26 @@ export class MessagesComponent implements OnInit {
 	displaySideMenu = false;
 	pageName = 'message';
 
-	constructor() { }
+	displayCompose = false;
+	message;
+	to: string;
+	messageForm: FormGroup;
+
+	constructor(
+		private formBuilder: FormBuilder
+	) { }
 
 	ngOnInit() {
+		this.messageForm = this.formBuilder.group({
+			to: [''],
+			subject: [''],
+			body: ['']
+		});
 		this.inbox = (json as any).default;
+	}
+
+	get formControls() {
+		return this.messageForm.controls;
 	}
 
 	openSideMenu() {
@@ -23,5 +40,14 @@ export class MessagesComponent implements OnInit {
 
 	updateSideBarState() {
 		this.displaySideMenu = false;
+	}
+
+	composeMessage(message) {
+		this.displayCompose = true
+		this.message = message;
+	}
+
+	sendMessage() {
+		console.log(this.messageForm.value);
 	}
 }
