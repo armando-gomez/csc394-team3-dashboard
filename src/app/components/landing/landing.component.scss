@@ -5,14 +5,49 @@
 	.image-wrapper {
 		width: 1920px;
 		height: 800px;
-		background-image: url('../../../assets/img/laptop.jpg');
+		background-image: url('../../../assets/img/laptop_final.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
 
 		.row {
 			padding-top: 20%;
 
-			.col-2{
+			.col-2 {
 				margin-top: 5px;
 			}
 		}
+	}
+
+	.team-wrapper {
+		width: 1920px;
+		height: 1000px;
+
+		.row {
+			margin: 5%;
+			padding-top: 3%;
+		}
+	}	
+
+	.headshot {
+		max-width: 200px;
+		width: 100%;
+		height: auto;
+		border-radius: 50%;
+	}
+
+	.team {
+		padding-top: 15%;
+		margin-bottom: -5%;
+		text-align: center;
+		font-size: 2vw;
+		color: #ffffff;
+		font-weight: bold;
+	}
+
+	.name {
+		color: #ffffff;
+		text-align: center;
+		font-size: 1vw;
 	}
 }
