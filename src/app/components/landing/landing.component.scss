@@ -11,10 +11,19 @@
 
 		.row {
 			padding-top: 20%;
+			text-align: center;
 
 			.col-2 {
 				margin-top: 5px;
 			}
+		}
+
+		::ng-deep .ui-button {
+			width: 100%;
+		}
+
+		.landing-buttons {
+			width: 40%;
 		}
 	}
 
