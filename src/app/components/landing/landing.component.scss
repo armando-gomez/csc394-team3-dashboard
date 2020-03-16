@@ -4,11 +4,9 @@
 
 	.image-wrapper {
 		width: 1920px;
-		height: 800px;
+		height: 1000px;
 		background-image: url('../../../assets/img/laptop_final.png');
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center;
+		background-size: 100vw 100vh;
 
 		.row {
 			padding-top: 20%;
