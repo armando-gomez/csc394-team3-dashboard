@@ -3,30 +3,22 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col">
-			<p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="6000">
-				<ng-template let-image pTemplate="item">
-					<div class="image-details container">
-						<div class="row">
-							<div class="col">
-								<img src="../../../assets/img/{{ image.src }}.png">
-							</div>
-						</div>
-					</div>
-				</ng-template>
-			</p-carousel>
+		<div class="col-12 hero-image">
+			<img src="../../../assets/img/{{ image }}.jpg">
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-6">
-			<p-header>
-				<h3>Placeholder</h3>
-			</p-header>
+		<div *ngIf="image === 'job' || image === 'wp'" class="col-6 text-center">
+			<iframe style="background: #E9F3F5;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-creek/embed/charts?id=4b326500-acbb-4093-9b67-aaffb7725617&theme=light"></iframe>
 		</div>
-		<div class="col-6">
-			<p-header>
-				<h3># of jobs by location</h3>
-			</p-header>
+		<div *ngIf="image === 'job' || image === 'mgmt'" class="col-6 text-center">
+			<iframe style="background: #E9F3F5;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-creek/embed/charts?id=8f5581c1-de98-4c96-b47a-4f86cffb6e5f&theme=light"></iframe>
+		</div>
+		<div *ngIf="image === 'mgmt' || image === 'wp'" class="col-6 text-center">
+			<iframe style="background: #E9F3F5;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-creek/embed/charts?id=677e4a69-eb6b-42f4-acd4-e4f1b7ca2474&theme=light"></iframe>
+		</div>
+		<div *ngIf="image === 'hr'" class="col-12 text-center">
+			<iframe style="background: #E9F3F5;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-project-0-creek/embed/charts?id=2eebd03e-ba24-4c02-b9e4-8d40720badf0&theme=light"></iframe>
 		</div>
 	</div>
 </div>

@@ -1,43 +1,112 @@
-h1 {
-    text-align: center;
-}
+.content {
+	padding: 0;
+	overflow-x: hidden;
 
-.title {
-    margin-top: 0px;
-    color: #ffffff;
-}
+	.image-wrapper {
+		background-image: url('../../../assets/img/laptop_final.png');
+		height: 1000px;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
 
-.description {
-    color: #ffffff;
-    font-family: "Spartan";
-    text-align: center;
-    font-weight: 300;
-}
+		.row {
+			padding-top: 20%;
+			text-align: center;
 
-.landingButton {
-    text-align: center;
-}
+			.col-2 {
+				margin-top: 5px;
+			}
+		}
 
-.button2 {
-    color: #ffffff;
-    background: none;
-    background-color: transparent;
-    margin: -10px 0px 5px 5px;
-    padding: 3px;
-    text-align: center;
-    font-size: 0.7vw;
-    width: 5%;
-}
+		::ng-deep .ui-button {
+			width: 100%;
+		}
 
-.button2:hover {
-    color: #acccdd;
-    transition-duration: 0.5s;
-}
+		.landing-buttons {
+			width: 40%;
+		}
+	}
 
-.bg {
-  background-image: url('../../../assets/img/laptop.jpg');
-  height: 1000px;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+	.team-wrapper {
+		width: 1920px;
+		height: 1000px;
+
+		.row {
+			margin: 5%;
+			padding-top: 3%;
+		}
+	}	
+
+	.headshot {
+		max-width: 200px;
+		width: 100%;
+		height: auto;
+		border-radius: 50%;
+		transition: 0.5 ease;
+		backface-visibility: hidden;
+		color: #FFFFFF;
+	}
+
+	.team {
+		padding-top: 15%;
+		margin-bottom: -5%;
+		text-align: center;
+		font-size: 2vw;
+		color: #ffffff;
+		font-weight: bold;
+	}
+
+	.name {
+		color: #D8EFF6;
+		text-align: center;
+		font-size: 1vw;
+		padding-top: 3%;
+		padding-left: 15%;
+		font-weight: 500;
+	}
+
+	.link {
+		position: relative;
+		width: 50%;
+		text-align: center;
+	}
+
+	.middle {
+		transition: 0.5s ease;
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	.link:hover .headshot {
+		opacity: 0.4;
+		color: #FFFFFF;
+		transition: 0.3s ease;
+		filter: grayscale(50%);
+		filter: blur(1px);
+	}
+
+	.link:hover .middle {
+		opacity: 1;
+		color: #FFFFFF;
+	}
+
+	.text {
+		font-size: 20px;
+		padding: 16px 32px;
+		text-align: center;
+	}
+
+	a {
+		color: #FFFFFF;
+	}
+
+	a:hover {
+		color: #D8EFF6;
+		text-decoration: none;
+	}
 }
